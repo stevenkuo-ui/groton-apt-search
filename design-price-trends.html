@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price Trends — Design Mockup</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f0f2f5; color: #17202a; }
+  .page-shell { display: flex; flex-direction: column; min-height: 100vh; }
+
+  /* ── MOCKUP BANNER ── */
+  .mockup-banner { background: #111827; color: #fff; text-align: center; padding: 12px 20px; font-size: 13px; letter-spacing: 0.05em; }
+  .mockup-banner span { background: #f59e0b; color: #111; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-right: 8px; }
+
+  /* ── PROPERTY PAGE SECTION ── */
+  .prop-section { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.10); }
+  .prop-hero { background: linear-gradient(135deg, #1e3a5f, #2d6a4f); color: #fff; padding: 28px 36px; }
+  .prop-hero h1 { margin: 0 0 4px; font-size: 28px; }
+  .prop-hero p { margin: 0; opacity: 0.85; font-size: 15px; }
+  .prop-nav { background: #f6f8fb; border-bottom: 1px solid #e6ebf2; padding: 0 36px; display: flex; gap: 0; }
+  .prop-nav button { background: none; border: none; padding: 14px 20px; font-size: 14px; font-weight: 600; color: #5f6b7a; cursor: pointer; border-bottom: 3px solid transparent; }
+  .prop-nav button.active { color: #1557ff; border-bottom-color: #1557ff; }
+  .prop-content { padding: 36px; display: none; }
+  .prop-content.active { display: block; }
+
+  /* ── NEWS SECTION (existing) ── */
+  .news-card { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; }
+  .news-card h2 { margin: 0 0 4px; font-size: 15px; color: #92400e; }
+  .news-card .news-date { font-size: 12px; color: #92400e; font-weight: 600; margin-bottom: 6px; }
+  .news-card .news-body { font-size: 14px; color: #78350f; margin: 0; }
+
+  /* ── PRICE TRENDS SECTION ── */
+  .trends-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .trends-header h2 { margin: 0; font-size: 22px; }
+  .trends-meta { font-size: 13px; color: #5f6b7a; }
+
+  .room-type-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .room-type-tabs button { background: #f0f2f5; border: 1px solid #e6ebf2; border-radius: 8px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; color: #5f6b7a; }
+  .room-type-tabs button.active { background: #1557ff; color: #fff; border-color: #1557ff; }
+
+  .chart-container { background: #fafbfc; border: 1px solid #e6ebf2; border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .chart-container h3 { margin: 0 0 4px; font-size: 16px; }
+  .chart-meta { font-size: 12px; color: #5f6b7a; margin-bottom: 16px; }
+  canvas { width: 100% !important; max-height: 260px; }
+
+  .price-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .price-table th { text-align: left; padding: 10px 14px; background: #f6f8fb; font-size: 13px; font-weight: 700; color: #5f6b7a; border-bottom: 2px solid #e6ebf2; }
+  .price-table td { padding: 10px 14px; font-size: 14px; border-bottom: 1px solid #e6ebf2; }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-current { font-weight: 700; }
+  .price-up { color: #dc2626; font-size: 13px; }
+  .price-down { color: #16a34a; font-size: 13px; }
+  .price-new { font-size: 11px; color: #fff; background: #2563eb; padding: 2px 6px; border-radius: 6px; margin-left: 6px; vertical-align: middle; }
+  .arrow-up::before { content: "↑"; margin-left: 4px; }
+  .arrow-down::before { content: "↓"; margin-left: 4px; }
+
+  /* ── INDEX PAGE ── */
+  .index-section { max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.10); }
+  .index-hero { background: linear-gradient(135deg, #111827, #1f3f8f); color: #fff; padding: 36px; }
+  .index-hero h1 { margin: 0 0 8px; font-size: 36px; }
+  .index-stats { display: flex; gap: 32px; margin-top: 20px; flex-wrap: wrap; }
+  .index-stat { text-align: center; }
+  .index-stat .num { font-size: 36px; font-weight: 800; }
+  .index-stat .label { font-size: 13px; opacity: 0.75; }
+  .index-tabs { background: #f6f8fb; border-bottom: 1px solid #e6ebf2; padding: 0 36px; display: flex; gap: 0; }
+  .index-tabs button { background: none; border: none; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #5f6b7a; cursor: pointer; border-bottom: 3px solid transparent; }
+  .index-tabs button.active { color: #1557ff; border-bottom-color: #1557ff; }
+  .tab-panel { padding: 36px; display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Property card grid */
+  .prop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .prop-card { border: 1px solid #e6ebf2; border-radius: 14px; padding: 20px; background: #fff; }
+  .prop-card .prop-name { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .prop-card .prop-addr { font-size: 13px; color: #5f6b7a; margin-bottom: 12px; }
+  .prop-card .prop-price { font-size: 20px; font-weight: 800; color: #1557ff; margin-bottom: 4px; }
+  .prop-card .prop-units { font-size: 13px; color: #16a34a; font-weight: 600; }
+  .prop-badge { display: inline-block; background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-bottom: 8px; }
+  .prop-badge.updated { background: #dbeafe; color: #1e40af; }
+
+  /* City trends panel */
+  .city-chart-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+  .city-card { background: #fafbfc; border: 1px solid #e6ebf2; border-radius: 14px; padding: 24px; }
+  .city-card h3 { margin: 0 0 4px; font-size: 18px; font-weight: 700; }
+  .city-card .city-sub { font-size: 13px; color: #5f6b7a; margin-bottom: 16px; }
+  .city-card canvas { max-height: 200px; }
+
+  .region-summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .region-stat { background: linear-gradient(135deg, #111827, #1f3f8f); color: #fff; border-radius: 14px; padding: 20px; }
+  .region-stat .reg-label { font-size: 12px; opacity: 0.75; margin-bottom: 4px; }
+  .region-stat .reg-value { font-size: 28px; font-weight: 800; }
+  .region-stat .reg-change { font-size: 13px; margin-top: 4px; }
+  .region-stat .reg-change.up { color: #f87171; }
+  .region-stat .reg-change.down { color: #86efac; }
+
+  /* ── LEGEND / NOTES ── */
+  .design-note { background: #fff3cd; border: 1px dashed #f59e0b; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 13px; color: #92400e; }
+  .design-note strong { }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     DESIGN MOCKUP BANNER
+═══════════════════════════════════════════════════════ -->
+<div class="mockup-banner">
+  <span>DESIGN MOCKUP</span> Price Trends — Property Page + Index City Tab
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 1: PROPERTY PAGE — PRICE TRENDS TAB
+═══════════════════════════════════════════════════════ -->
+<div class="prop-section">
+  <div class="prop-hero">
+    <h1>The Ledges Apartments</h1>
+    <p>480 Trowbridge St, Groton CT &nbsp;·&nbsp; (860) 445-1234 &nbsp;·&nbsp; theledgesapartments.com</p>
+  </div>
+
+  <div class="prop-nav">
+    <button>Overview</button><button class="active">Price Trends</button><button>Floor Plans</button><button>Location</button><button>Contact</button>
+  </div>
+
+  <div class="prop-content active" id="panel-trends">
+    <!-- News (existing, for context) -->
+    <div class="news-card">
+      <h2>📰 Spring Move-In Special: 1 Month Free</h2>
+      <p class="news-date">March 2026</p>
+      <p class="news-body">Valid on 12-month leases signed by March 31, 2026. Contact leasing office to apply.</p>
+    </div>
+
+    <!-- NEW: Price Trends -->
+    <div style="margin-top: 28px;">
+      <div class="trends-header">
+        <h2>📈 Price Trends</h2>
+        <span class="trends-meta">Tracking since March 2026 · Updated Mar 23, 2026</span>
+      </div>
+
+      <div class="room-type-tabs">
+        <button class="active">Studio</button>
+        <button>1 BR</button>
+        <button>2 BR</button>
+        <button>3 BR</button>
+      </div>
+
+      <!-- Chart for 1BR -->
+      <div class="chart-container">
+        <h3>1 Bedroom — 1,027 sqft</h3>
+        <div class="chart-meta">Current: <strong>$2,052/mo</strong> <span class="price-up arrow-up"></span> +$107 vs last month &nbsp;·&nbsp; 3 units available</div>
+        <canvas id="chart-1br" height="200"></canvas>
+      </div>
+
+      <!-- Compact price table -->
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Room Type</th>
+            <th>Current Price</th>
+            <th>Last Month</th>
+            <th>3 Mo Avg</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Studio — 480 sqft</td>
+            <td class="price-current">$1,695/mo <span class="price-up arrow-up"></span></td>
+            <td>$1,695</td>
+            <td>$1,680</td>
+            <td><span style="color:#dc2626">↑ +$107</span></td>
+          </tr>
+          <tr>
+            <td>1 BR — 1,027 sqft</td>
+            <td class="price-current">$2,052/mo <span class="price-up arrow-up"></span></td>
+            <td>$1,945</td>
+            <td>$1,980</td>
+            <td><span style="color:#dc2626">↑ +$107</span></td>
+          </tr>
+          <tr>
+            <td>2 BR — 1,380 sqft</td>
+            <td class="price-current">$2,797/mo <span class="price-new">NEW</span></td>
+            <td>—</td>
+            <td>—</td>
+            <td><span style="color:#2563eb">NEW</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECTION 2: INDEX PAGE — CITY TRENDS TAB
+═══════════════════════════════════════════════════════ -->
+<div class="index-section">
+  <div class="index-hero">
+    <h1>Groton CT Apartment Finder</h1>
+    <div class="index-stats">
+      <div class="index-stat"><div class="num">28</div><div class="label">Properties</div></div>
+      <div class="index-stat"><div class="num">5</div><div class="label">Cities</div></div>
+      <div class="index-stat"><div class="num">3</div><div class="label">Updated Today</div></div>
+      <div class="index-stat"><div class="num">14</div><div class="label">Avg 1BR Price</div></div>
+    </div>
+  </div>
+
+  <div class="index-tabs">
+    <button class="active">All Properties</button>
+    <button>City Price Trends</button>
+    <button>Map View</button>
+  </div>
+
+  <!-- TAB 1: Property list (simplified) -->
+  <div class="tab-panel active" id="tab-props">
+    <div class="prop-grid">
+      <div class="prop-card">
+        <span class="prop-badge updated">Updated today</span>
+        <div class="prop-name">The Ledges</div>
+        <div class="prop-addr">Groton</div>
+        <div class="prop-price">$2,052/mo</div>
+        <div class="prop-units">3 units available</div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-name">Chester Place</div>
+        <div class="prop-addr">Groton</div>
+        <div class="prop-price">$1,845/mo</div>
+        <div class="prop-units">Available now</div>
+      </div>
+      <div class="prop-card">
+        <span class="prop-badge">Price dropped ↓</span>
+        <div class="prop-name">Reid Hughes</div>
+        <div class="prop-addr">Norwich</div>
+        <div class="prop-price">$1,450/mo</div>
+        <div class="prop-units">8 units available</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: City Trends (NEW) -->
+  <div class="tab-panel" id="tab-trends">
+    <div class="design-note">📌 <strong>Design note:</strong> Region summary shows blended averages across all 5 cities. Each city card shows a price trend chart per unit type. Toggle Studio / 1BR / 2BR across all cities simultaneously.</div>
+
+    <div class="region-summary">
+      <div class="region-stat">
+        <div class="reg-label">Region Avg 1BR</div>
+        <div class="reg-value">$1,847</div>
+        <div class="reg-change up">↑ +$62 vs last month</div>
+      </div>
+      <div class="region-stat">
+        <div class="reg-label">Region Avg 2BR</div>
+        <div class="reg-value">$2,214</div>
+        <div class="reg-change up">↑ +$38 vs last month</div>
+      </div>
+      <div class="region-stat">
+        <div class="reg-label">Most Affordable City</div>
+        <div class="reg-value" style="font-size:22px">Norwich</div>
+        <div class="reg-change down">Avg 1BR $1,375</div>
+      </div>
+      <div class="region-stat">
+        <div class="reg-label">Most Expensive City</div>
+        <div class="reg-value" style="font-size:22px">Mystic</div>
+        <div class="reg-change up">Avg 1BR $2,380</div>
+      </div>
+    </div>
+
+    <div class="room-type-tabs" style="margin-bottom: 24px;">
+      <button class="active">Studio</button>
+      <button>1 BR</button>
+      <button>2 BR</button>
+      <button>3 BR</button>
+    </div>
+
+    <div class="city-chart-grid">
+      <div class="city-card">
+        <h3>🌊 Groton</h3>
+        <div class="city-sub">12 properties · Avg 1BR: $1,890</div>
+        <canvas id="chart-groton" height="180"></canvas>
+      </div>
+      <div class="city-card">
+        <h3>🏙 Norwich</h3>
+        <div class="city-sub">6 properties · Avg 1BR: $1,375</div>
+        <canvas id="chart-norwich" height="180"></canvas>
+      </div>
+      <div class="city-card">
+        <h3>⚓ New London</h3>
+        <div class="city-sub">5 properties · Avg 1BR: $1,520</div>
+        <canvas id="chart-nl" height="180"></canvas>
+      </div>
+      <div class="city-card">
+        <h3>🏞 Mystic</h3>
+        <div class="city-sub">3 properties · Avg 1BR: $2,380</div>
+        <canvas id="chart-mystic" height="180"></canvas>
+      </div>
+      <div class="city-card">
+        <h3>💧 Waterford</h3>
+        <div class="city-sub">2 properties · Avg 1BR: $1,640</div>
+        <canvas id="chart-waterford" height="180"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js for demo -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+const CHART_STYLE = {
+  borderRadius: 8,
+  borderWidth: 2,
+  pointRadius: 4,
+  pointHoverRadius: 6,
+  tension: 0.3,
+};
+
+function makeLineChart(id, label, data, color) {
+  new Chart(document.getElementById(id), {
+    type: 'line',
+    data: {
+      labels: ['Dec', 'Jan', 'Feb', 'Mar'],
+      datasets: [{
+        label: label,
+        data: data,
+        borderColor: color,
+        backgroundColor: color + '22',
+        fill: true,
+        ...CHART_STYLE,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => `$${ctx.raw.toLocaleString()}/mo`
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          ticks: { callback: v => '$' + v.toLocaleString() }
+        }
+      }
+    }
+  });
+}
+
+// Per-property chart (1BR)
+makeLineChart('chart-1br', '1BR', [1895, 1945, 1945, 2052], '#1557ff');
+
+// City trend charts
+makeLineChart('chart-groton', '1BR', [1820, 1850, 1870, 1890], '#1557ff');
+makeLineChart('chart-norwich', '1BR', [1310, 1340, 1360, 1375], '#16a34a');
+makeLineChart('chart-nl', '1BR', [1450, 1480, 1510, 1520], '#f59e0b');
+makeLineChart('chart-mystic', '1BR', [2200, 2280, 2350, 2380], '#9333ea');
+makeLineChart('chart-waterford', '1BR', [1580, 1600, 1620, 1640], '#0ea5e9');
+
+// Tab switching (mockup)
+document.querySelectorAll('.index-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.index-tabs button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const tabId = btn.textContent.includes('City') ? 'tab-trends' : 'tab-props';
+    document.getElementById(tabId).classList.add('active');
+  });
+});
+document.querySelectorAll('.prop-nav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.prop-nav button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

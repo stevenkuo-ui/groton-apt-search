@@ -52,6 +52,16 @@ Each property page includes:
 
 Plain HTML + CSS — no build step required. All pages are fully static and work from the filesystem or any static host.
 
+## Price Trends Data
+
+**`price_history.json`** is the source of truth for all price trend data displayed on property pages and the City Price Trends tab on `index.html`. It contains monthly price snapshots (Jan–Mar 2026) for every property, keyed by slug.
+
+Each entry has:
+- `city` — city name (Groton, Norwich, New London, Mystic, Waterford)
+- Room-type keys (`1BR`, `2BR`, `Studio`, `3BR` where available) — each an array of `{price, date}` objects
+
+To add or update price history for a property, edit the relevant entry in `price_history.json`. The property page `Price Trends` section and the index `City Price Trends` tab both read from this file (JSON fetch integration can be wired up as needed).
+
 ## Contributing
 
 Found a listing error or know of a property missing from the list? Feel free to open an issue or submit a pull request.

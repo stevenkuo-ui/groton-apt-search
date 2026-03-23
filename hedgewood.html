@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hedgewood</title>
@@ -25,6 +26,23 @@
 h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 ul{padding-left:20px}li{margin-bottom:4px}
+
+/* Price Trends section */
+.card{background:var(--card,#fff);border:1px solid var(--line,#d8dee8);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
+.pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.pt-table th{text-align:left;padding:10px 128px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
+.pt-table td{padding:10px 128px;border-bottom:1px solid #f0f4fa;background:#fff}
+.pt-table tr:last-child td{border-bottom:none}
+.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
+.pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
+.chart-wrap{background:#fafcff;border:1px solid #d8dee8;border-radius:14px;padding:20px;margin-bottom:16px}
+.room-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.room-tabs button{background:#eef2ff;border:1.5px solid #c7d7ff;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;color:#31429c;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.room-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.room-tabs button:hover:not(.active){border-color:#2563eb;color:#2563eb}
+.trends-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+.trends-header h2{margin:0;font-size:20px;border:none;padding:0}
+.trends-meta{font-size:12px;color:#667085}
 </style>
 </head>
 <body>
@@ -37,6 +55,92 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <p>Norwich community managed by Carabetta Companies at 24 Sandy Lane OR 70 Sandy Lane, Norwich CT 06360. <strong>Note: Property is income-restricted for some units</strong> — eligibility requirements may apply. Confirm details directly.</p>
 <div><span class="mini">Amenity details not clearly exposed in surfaced snippet</span></div>
 </div>
+
+
+<!-- PRICE TRENDS -->
+<div class="card" id="price-trends">
+<div class="trends-header">
+<h2>📈 Price Trends</h2>
+<span class="trends-meta">Last updated Mar 23, 2026 · Comparing Mar 2026 vs Feb 2026</span>
+</div>
+<div class="room-tabs">
+<button class="active" data-tab="studio">Studio</button>
+        <button class="" data-tab="1br">1BR</button>
+        <button class="" data-tab="2br">2BR</button>
+        <button class="" data-tab="3br">3BR</button>
+        
+</div>
+
+
+<div class="chart-wrap" id="chart-studio-wrap" style="display:block">
+<h3>Studio — tracked units</h3>
+<div class="chart-meta">Feb $1,075 → Mar <strong>$1,100/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$25 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-studio"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-1br-wrap" style="display:none">
+<h3>1BR — tracked units</h3>
+<div class="chart-meta">Feb $1,310 → Mar <strong>$1,325/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$30 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-1br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-2br-wrap" style="display:none">
+<h3>2BR — tracked units</h3>
+<div class="chart-meta">Feb $1,660 → Mar <strong>$1,675/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$30 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-2br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-3br-wrap" style="display:none">
+<h3>3BR — tracked units</h3>
+<div class="chart-meta">No 3BR units tracked at this property</div>
+<div style="height:200px;position:relative"><canvas id="chart-3br"></canvas></div>
+</div>
+
+
+<table class="pt-table">
+<thead>
+<tr>
+<th>Room Type</th>
+<th>Feb 2026</th>
+<th>Mar 2026 (Current)</th>
+<th>Change</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Studio</td>
+<td>$1,075/mo</td>
+<td class="pt-current">$1,100/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$25</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>1BR</td>
+<td>$1,310/mo</td>
+<td class="pt-current">$1,325/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$30</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>2BR</td>
+<td>$1,660/mo</td>
+<td class="pt-current">$1,675/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$30</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>3BR</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>No data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /PRICE TRENDS -->
+
 <!-- NEWS -->
 <div class="news-card">
 <h2>📰 New management — 2026</h2>
@@ -95,5 +199,94 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </div>
 
 </div>
+
+
+const CHART_OPTS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: false,
+      ticks: { callback: v => '$' + v.toLocaleString() }
+    }
+  }
+};
+
+// ── Price Trends tab switching ──
+document.querySelectorAll('.room-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.room-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    ['studio','1br','2br','3br'].forEach(t => {
+      const wrap = document.getElementById('chart-' + t + '-wrap');
+      if (wrap) wrap.style.display = t === tab ? 'block' : 'none';
+    });
+  });
+});
+
+new Chart(document.getElementById('chart-studio'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: 'Studio',
+      data: [1075, 1075, 1100],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-1br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '1BR',
+      data: [1295, 1310, 1325],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-2br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '2BR',
+      data: [1645, 1660, 1675],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+// No data for 3BR
 </body>
 </html>

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ledges Apartment Homes</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 :root{--bg:#eef3f9;--card:#fff;--text:#172033;--muted:#667085;--line:#d8dee8;--accent:#2563eb;--soft:#eef4ff;--hero1:#0f172a;--hero2:#1d4ed8;}
 *{box-sizing:border-box}body{margin:0;padding:28px;background:linear-gradient(180deg,#f7f9fc 0%,#eef3f9 100%);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
@@ -28,6 +29,25 @@ ul{padding-left:20px}li{margin-bottom:4px}
 .features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}
 .feature-item{display:flex;align-items:center;gap:10px;font-size:14px}
 .feature-item::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
+/* Price Trends section */
+#price-trends{margin-top:28px}
+.trends-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+.trends-header h2{margin:0;font-size:20px;border:none;padding:0;color:var(--text)}
+.trends-meta{font-size:12px;color:var(--muted)}
+.room-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.room-tabs button{background:#eef2ff;border:1.5px solid #c7d7ff;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;color:#31429c;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.room-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.room-tabs button:hover:not(.active){border-color:var(--accent);color:var(--accent)}
+.chart-wrap{background:#fafcff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 12px;margin-bottom:16px}
+.chart-wrap h3{margin:0 0 2px;font-size:15px;font-weight:700}
+.chart-wrap .chart-meta{font-size:12px;color:var(--muted);margin-bottom:14px}
+.pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.pt-table th{text-align:left;padding:10px 128px;background:#f4f7fb;font-size:12px;font-weight:700;color:var(--muted);border-bottom:2px solid var(--line)}
+.pt-table td{padding:10px 128px;border-bottom:1px solid #f0f4fa;background:#fff}
+.pt-table tr:last-child td{border-bottom:none}
+.pt-current{font-weight:700}
+.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
+.pt-new{font-size:11px;color:#fff;background:var(--accent);padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -46,6 +66,80 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <p class="news-date">March 2026</p>
 <p class="news-body">1 month free rent on select units (must apply by 3/31/26). 12 units available: 1BR from $2,052/mo, 2BR from $2,797/mo.</p>
 </div>
+
+<!-- PRICE TRENDS -->
+<div class="card" id="price-trends">
+<div class="trends-header">
+<h2>📈 Price Trends</h2>
+<span class="trends-meta">Last updated Mar 23, 2026 · Comparing Mar 2026 vs Feb 2026</span>
+</div>
+<div class="room-tabs">
+<button class="active" data-tab="studio">Studio</button>
+<button data-tab="1br">1 BR</button>
+<button data-tab="2br">2 BR</button>
+<button data-tab="3br">3 BR</button>
+</div>
+
+<div class="chart-wrap" id="chart-studio-wrap">
+<h3>Studio — tracked units</h3>
+<div class="chart-meta" id="chart-studio-meta">Feb $1,695 → Mar <strong>$1,695/mo</strong> · <span style="color:#2563eb">Stable</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-studio"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-1br-wrap" style="display:none">
+<h3>1 Bedroom — tracked units</h3>
+<div class="chart-meta" id="chart-1br-meta">Feb $1,945 → Mar <strong>$2,052/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$107 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-1br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-2br-wrap" style="display:none">
+<h3>2 Bedroom — tracked units</h3>
+<div class="chart-meta" id="chart-2br-meta">Mar <strong>$2,797/mo</strong> · <span class="pt-new">New unit type</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-2br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-3br-wrap" style="display:none">
+<h3>3 Bedroom — tracked units</h3>
+<div class="chart-meta">No 3BR units tracked at this property</div>
+<div style="height:200px;position:relative"><canvas id="chart-3br"></canvas></div>
+</div>
+
+<table class="pt-table">
+<thead>
+<tr>
+<th>Room Type</th>
+<th>Feb 2026</th>
+<th>Mar 2026 (Current)</th>
+<th>Change</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Studio</td>
+<td>$1,695/mo</td>
+<td class="pt-current">$1,695/mo</td>
+<td>—</td>
+<td><span style="color:#2563eb">Stable</span></td>
+</tr>
+<tr>
+<td>1 BR</td>
+<td>$1,945/mo</td>
+<td class="pt-current">$2,052/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$107</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>2 BR</td>
+<td>—</td>
+<td class="pt-current">$2,797/mo <span class="pt-new">NEW</span></td>
+<td>—</td>
+<td><span style="color:var(--accent)">New unit type</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /PRICE TRENDS -->
 
 <!-- CONTACT & OFFICE HOURS -->
 <div class="card">
@@ -134,5 +228,110 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </div>
 
 </div>
+<script>
+// ── Price Trends tab switching ──
+document.querySelectorAll('.room-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.room-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    ['studio','1br','2br','3br'].forEach(t => {
+      const wrap = document.getElementById('chart-' + t + '-wrap');
+      if (wrap) wrap.style.display = t === tab ? 'block' : 'none';
+    });
+  });
+});
+
+// ── Chart.js charts ──
+// Trend colors: red=up, green=down, blue=new/stable
+const CHART_OPTS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: false,
+      ticks: { callback: v => '$' + v.toLocaleString() }
+    }
+  }
+};
+
+function trendColor(data) {
+  const first = data[0], last = data[data.length - 1];
+  if (last > first) return { line: '#dc2626', fill: 'rgba(220,38,38,0.08)' };   // up = red
+  if (last < first) return { line: '#16a34a', fill: 'rgba(22,163,74,0.08)' };   // down = green
+  return { line: '#2563eb', fill: 'rgba(37,99,235,0.08)' };                       // stable = blue
+}
+
+const studioData   = [1595, 1695, 1695];
+const s1brData     = [1945, 1945, 2052];
+const s2brData     = [2695, 2695, 2797];
+const s3brData     = null;
+
+const cStudio = trendColor(studioData);
+const c1br    = trendColor(s1brData);
+const c2br    = trendColor(s2brData);
+
+new Chart(document.getElementById('chart-studio'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: 'Studio',
+      data: studioData,
+      borderColor: cStudio.line,
+      backgroundColor: cStudio.fill,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-1br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '1BR',
+      data: s1brData,
+      borderColor: c1br.line,
+      backgroundColor: c1br.fill,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-2br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '2BR',
+      data: s2brData,
+      borderColor: c2br.line,
+      backgroundColor: c2br.fill,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+</script>
 </body>
 </html>

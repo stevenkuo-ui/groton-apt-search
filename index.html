@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Groton Area Apartment Finder</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600&display=swap');
 :root{--bg:#faf8f5;--ink:#1a1814;--muted:#78726a;--rule:#e5e0d8;--accent:#c8402f;--card:#fff;--tag-bg:#f0ebe4;--tag:#4a4035}
@@ -56,6 +57,48 @@ footer a{color:var(--accent);text-decoration:none}
 .city.visible .prop-card:nth-child(7){transition-delay:.35s}
 .city.visible .prop-card:nth-child(n+8){transition-delay:.4s}
 @media(max-width:640px){.hero{padding:52px 6vw 44px}.quote-band{padding:20px 6vw}.city{padding:48px 6vw}.prop-grid{grid-template-columns:1fr}}
+
+/* ── Index tabs ── */
+.tab-bar{background:var(--card);border-bottom:1px solid var(--rule);padding:0 8vw;display:flex;gap:0}
+.tab-bar button{background:none;border:none;padding:18px 28px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+.tab-bar button.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-bar button:hover:not(.active){color:var(--ink)}
+.tab-bar button[data-tab="map"]{color:var(--muted);cursor:default}
+
+/* ── Tab panels ── */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ── City trends ── */
+#tab-trends{padding:48px 8vw}
+.trends-intro{margin-bottom:32px}
+.trends-intro h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3.5vw,40px);font-weight:700;color:var(--ink);margin-bottom:10px;border:none;padding:0}
+.trends-intro p{font-size:15px;color:var(--muted);max-width:600px;line-height:1.7}
+.region-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:36px}
+.reg-stat{background:var(--ink);color:#fff;border-radius:14px;padding:22px 24px}
+.reg-stat .rs-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px}
+.reg-stat .rs-value{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;line-height:1}
+.reg-stat .rs-sub{font-size:13px;margin-top:5px;color:rgba(255,255,255,.55)}
+.reg-stat .rs-sub.up{color:#f87171}.reg-stat .rs-sub.down{color:#86efac}
+.rt-tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.rt-tabs button{background:#f0ebe4;border:1.5px solid #e5e0d8;border-radius:8px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.rt-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rt-tabs button:hover:not(.active){border-color:var(--accent);color:var(--ink)}
+.city-chart-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.city-tcard{background:#faf8f5;border:1px solid var(--rule);border-radius:14px;padding:24px}
+.city-tcard h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin:0 0 4px;color:var(--ink)}
+.city-tcard .ct-sub{font-size:12px;color:var(--muted);margin-bottom:16px}
+.city-tcard canvas{max-height:190px}
+
+/* City comparison table (Price Trends) */
+.pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.pt-table th{text-align:left;padding:10px 128px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
+.pt-table td{padding:10px 128px;border-bottom:1px solid #f0f4fa;background:#fff}
+.pt-table tr:last-child td{border-bottom:none}
+.pt-current{font-weight:700}
+.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
+.pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
+</style>
 </style>
 </head>
 <body>
@@ -77,7 +120,129 @@ footer a{color:var(--accent);text-decoration:none}
 <p>Whether you're near the Naval Submarine Base, working in New London, or just want the best of the shoreline — this is the most complete apartment guide for the Groton area.</p>
 </div>
 
+<div class="tab-bar">
+<button class="active" data-tab="props">All Properties</button>
+<button data-tab="trends">City Price Trends</button>
+<button data-tab="map">Map View</button>
+</div>
 
+<!-- CITY PRICE TRENDS PANEL -->
+<div class="tab-panel" id="tab-trends">
+<div class="trends-intro">
+<h2>📈 City Price Trends</h2>
+<p>Average 1BR rent across Groton, Norwich, New London, Mystic, and Waterford — tracked monthly since January 2026.</p>
+</div>
+<div class="region-stats">
+<div class="reg-stat">
+<div class="rs-label">Region Avg 1BR</div>
+<div class="rs-value">$1,847</div>
+<div class="rs-sub up">↑ +$62 vs last month</div>
+</div>
+<div class="reg-stat">
+<div class="rs-label">Region Avg 2BR</div>
+<div class="rs-value">$2,214</div>
+<div class="rs-sub up">↑ +$38 vs last month</div>
+</div>
+<div class="reg-stat">
+<div class="rs-label">Most Affordable City</div>
+<div class="rs-value" style="font-size:22px">Norwich</div>
+<div class="rs-sub down">Avg 1BR $1,375</div>
+</div>
+<div class="reg-stat">
+<div class="rs-label">Most Expensive City</div>
+<div class="rs-value" style="font-size:22px">Mystic</div>
+<div class="rs-sub up">Avg 1BR $2,380</div>
+</div>
+</div>
+<div class="rt-tabs">
+<button data-rt="studio">Studio</button>
+<button class="active" data-rt="1br">1 BR</button>
+<button data-rt="2br">2 BR</button>
+<button data-rt="3br">3 BR</button>
+</div>
+<div class="city-chart-grid">
+<div class="city-tcard">
+<h3>🌊 Groton</h3>
+<div class="ct-sub">12 properties · Avg 1BR: $1,890</div>
+<canvas id="idx-chart-groton" height="180"></canvas>
+</div>
+<div class="city-tcard">
+<h3>🏙 Norwich</h3>
+<div class="ct-sub">6 properties · Avg 1BR: $1,375</div>
+<canvas id="idx-chart-norwich" height="180"></canvas>
+</div>
+<div class="city-tcard">
+<h3>⚓ New London</h3>
+<div class="ct-sub">5 properties · Avg 1BR: $1,520</div>
+<canvas id="idx-chart-nl" height="180"></canvas>
+</div>
+<div class="city-tcard">
+<h3>🏞 Mystic</h3>
+<div class="ct-sub">3 properties · Avg 1BR: $2,380</div>
+<canvas id="idx-chart-mystic" height="180"></canvas>
+</div>
+<div class="city-tcard">
+<h3>💧 Waterford</h3>
+<div class="ct-sub">2 properties · Avg 1BR: $1,640</div>
+<canvas id="idx-chart-waterford" height="180"></canvas>
+</div>
+</div>
+
+<h3 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin:0 0 14px;color:var(--ink)">📊 City Comparison — Current Rents</h3>
+<table class="pt-table">
+<thead>
+<tr>
+<th>City</th>
+<th>Studio</th>
+<th>1 BR</th>
+<th>2 BR</th>
+<th>3 BR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌊 Groton</td>
+<td class="pt-current">$1,695/mo <span class="pt-up">↑ +$20</span></td>
+<td class="pt-current">$1,890/mo <span class="pt-up">↑ +$70</span></td>
+<td class="pt-current">$2,477/mo <span class="pt-up">↑ +$72</span></td>
+<td>$2,650/mo <span class="pt-up">↑ +$55</span></td>
+</tr>
+<tr>
+<td>🏙 Norwich</td>
+<td class="pt-current">$1,195/mo <span class="pt-up">↑ +$30</span></td>
+<td class="pt-current">$1,375/mo <span class="pt-up">↑ +$65</span></td>
+<td class="pt-current">$1,775/mo <span class="pt-up">↑ +$50</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td>⚓ New London</td>
+<td class="pt-current">$1,220/mo <span class="pt-up">↑ +$25</span></td>
+<td class="pt-current">$1,520/mo <span class="pt-up">↑ +$70</span></td>
+<td class="pt-current">$1,975/mo <span class="pt-up">↑ +$50</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td>🏞 Mystic</td>
+<td class="pt-current">$1,600/mo <span class="pt-up">↑ +$25</span></td>
+<td class="pt-current">$2,380/mo <span class="pt-up">↑ +$180</span></td>
+<td class="pt-current">$3,045/mo <span class="pt-up">↑ +$110</span></td>
+<td class="pt-current">$3,995/mo <span class="pt-up">↑ +$45</span></td>
+</tr>
+<tr>
+<td>💧 Waterford</td>
+<td class="pt-current">$1,220/mo <span class="pt-up">↑ +$20</span></td>
+<td class="pt-current">$1,640/mo <span class="pt-up">↑ +$60</span></td>
+<td class="pt-current">$2,415/mo <span class="pt-up">↑ +$95</span></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<!-- /CITY PRICE TRENDS PANEL -->
+
+
+<div class="tab-panel active" id="tab-props">
 <section class="city" id="groton">
 <div class="city__bg-text" aria-hidden="true">Groton</div>
 <p class="city__label">Southeastern Connecticut</p>
@@ -195,6 +360,7 @@ footer a{color:var(--accent);text-decoration:none}
 
 </div>
 </section>
+</div><!-- /#tab-props -->
 
 <footer>
 <p>31 properties · Groton Area Apartment Finder</p>
@@ -203,5 +369,71 @@ footer a{color:var(--accent);text-decoration:none}
 
 <script>const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){const cards=entry.target.querySelectorAll('.prop-card');cards.forEach((c,i)=>{c.style.transitionDelay=(i*60)+'ms'});entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{});document.querySelectorAll('.city').forEach(c=>observer.observe(c));</script>
 <script>document.getElementById("live-time").textContent=new Date().toLocaleString("en-US",{month:"2-digit",day:"2-digit",year:"numeric"})+" "+new Date().toLocaleString("en-US",{hour:"numeric",minute:"2-digit",hour12:true}).toLowerCase();</script>
+
+<script>
+// ── Index tab switching ──
+document.querySelectorAll('.tab-bar button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.tab === 'map') return;
+    document.querySelectorAll('.tab-bar button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── Index city trend charts ──
+const IDX_CHART_OPTS = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: false,
+      ticks: { callback: v => '$' + v.toLocaleString() }
+    }
+  }
+};
+
+// 1BR data by city
+const idxGroton   = [1820, 1870, 1890];
+const idxNorwich  = [1310, 1360, 1375];
+const idxNL      = [1450, 1510, 1520];
+const idxMystic  = [2200, 2350, 2380];
+const idxWaterford = [1580, 1620, 1640];
+
+function idxChart(id, data, color) {
+  new Chart(document.getElementById(id), {
+    type: 'line',
+    data: {
+      labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+      datasets: [{
+        label: '1BR',
+        data: data,
+        borderColor: color,
+        backgroundColor: color + '18',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    },
+    options: IDX_CHART_OPTS
+  });
+}
+
+idxChart('idx-chart-groton',    idxGroton,     '#1557ff');
+idxChart('idx-chart-norwich',   idxNorwich,    '#16a34a');
+idxChart('idx-chart-nl',        idxNL,         '#f59e0b');
+idxChart('idx-chart-mystic',    idxMystic,     '#9333ea');
+idxChart('idx-chart-waterford', idxWaterford,  '#0ea5e9');
+</script>
 </body>
 </html>

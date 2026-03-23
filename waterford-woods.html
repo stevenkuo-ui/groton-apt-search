@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WaterFord Woods</title>
@@ -26,6 +27,23 @@ table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
 th,td{padding:10px 12px;border:1px solid var(--line);text-align:left}
 th{background:#f7f9fc;font-weight:600}
 .avail-now{color:#16a34a;font-weight:600}
+
+/* Price Trends section */
+.card{background:var(--card,#fff);border:1px solid var(--line,#d8dee8);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
+.pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.pt-table th{text-align:left;padding:10px 128px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
+.pt-table td{padding:10px 128px;border-bottom:1px solid #f0f4fa;background:#fff}
+.pt-table tr:last-child td{border-bottom:none}
+.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
+.pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
+.chart-wrap{background:#fafcff;border:1px solid #d8dee8;border-radius:14px;padding:20px;margin-bottom:16px}
+.room-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.room-tabs button{background:#eef2ff;border:1.5px solid #c7d7ff;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;color:#31429c;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.room-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.room-tabs button:hover:not(.active){border-color:#2563eb;color:#2563eb}
+.trends-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+.trends-header h2{margin:0;font-size:20px;border:none;padding:0}
+.trends-meta{font-size:12px;color:#667085}
 </style>
 </head>
 <body>
@@ -38,6 +56,92 @@ th{background:#f7f9fc;font-weight:600}
 <p>Resort-style apartment living in a wooded setting — confirmed market-rate pricing from live AppFolio listings (March 2026), plus workforce housing options.</p>
 <div><span class="mini">Pool</span><span class="mini">Pickleball</span><span class="mini">4 dog parks</span><span class="mini">Short-term OK</span><span class="mini">Washer/dryer</span><span class="mini">Pet-friendly</span><span class="mini">Workforce housing</span></div>
 </div>
+
+
+<!-- PRICE TRENDS -->
+<div class="card" id="price-trends">
+<div class="trends-header">
+<h2>📈 Price Trends</h2>
+<span class="trends-meta">Last updated Mar 23, 2026 · Comparing Mar 2026 vs Feb 2026</span>
+</div>
+<div class="room-tabs">
+<button class="active" data-tab="studio">Studio</button>
+        <button class="" data-tab="1br">1BR</button>
+        <button class="" data-tab="2br">2BR</button>
+        <button class="" data-tab="3br">3BR</button>
+        
+</div>
+
+
+<div class="chart-wrap" id="chart-studio-wrap" style="display:block">
+<h3>Studio — tracked units</h3>
+<div class="chart-meta">Feb $1,560 → Mar <strong>$1,580/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$35 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-studio"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-1br-wrap" style="display:none">
+<h3>1BR — tracked units</h3>
+<div class="chart-meta">Feb $1,875 → Mar <strong>$1,925/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$50 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-1br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-2br-wrap" style="display:none">
+<h3>2BR — tracked units</h3>
+<div class="chart-meta">Feb $2,380 → Mar <strong>$2,415/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$95 · Increasing</span></div>
+<div style="height:200px;position:relative"><canvas id="chart-2br"></canvas></div>
+</div>
+
+<div class="chart-wrap" id="chart-3br-wrap" style="display:none">
+<h3>3BR — tracked units</h3>
+<div class="chart-meta">No 3BR units tracked at this property</div>
+<div style="height:200px;position:relative"><canvas id="chart-3br"></canvas></div>
+</div>
+
+
+<table class="pt-table">
+<thead>
+<tr>
+<th>Room Type</th>
+<th>Feb 2026</th>
+<th>Mar 2026 (Current)</th>
+<th>Change</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Studio</td>
+<td>$1,560/mo</td>
+<td class="pt-current">$1,580/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$35</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>1BR</td>
+<td>$1,875/mo</td>
+<td class="pt-current">$1,925/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$50</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>2BR</td>
+<td>$2,380/mo</td>
+<td class="pt-current">$2,415/mo</td>
+<td><span style="color:#dc2626;font-weight:700">↑ +$95</span></td>
+<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+</tr>
+<tr>
+<td>3BR</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>No data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /PRICE TRENDS -->
+
 
 <!-- CONTACT & OFFICE HOURS -->
 <div class="card">
@@ -183,5 +287,94 @@ th{background:#f7f9fc;font-weight:600}
 </div>
 
 </div>
+
+
+const CHART_OPTS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: false,
+      ticks: { callback: v => '$' + v.toLocaleString() }
+    }
+  }
+};
+
+// ── Price Trends tab switching ──
+document.querySelectorAll('.room-tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.room-tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    ['studio','1br','2br','3br'].forEach(t => {
+      const wrap = document.getElementById('chart-' + t + '-wrap');
+      if (wrap) wrap.style.display = t === tab ? 'block' : 'none';
+    });
+  });
+});
+
+new Chart(document.getElementById('chart-studio'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: 'Studio',
+      data: [1545, 1560, 1580],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-1br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '1BR',
+      data: [1875, 1875, 1925],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+new Chart(document.getElementById('chart-2br'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [{
+      label: '2BR',
+      data: [2320, 2380, 2415],
+      borderColor: '#dc2626',
+      backgroundColor: 'rgba(220,38,38,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  },
+  options: CHART_OPTS
+});
+
+// No data for 3BR
 </body>
 </html>

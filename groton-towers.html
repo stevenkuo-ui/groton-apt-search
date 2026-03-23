@@ -63,42 +63,14 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- PRICE TRENDS -->
 <div class="card" id="price-trends">
 <div class="trends-header">
-<h2>📈 Price Trends</h2>
-<span class="trends-meta">Last updated Mar 23, 2026 · Comparing Mar 2026 vs Feb 2026</span>
-</div>
-<div class="room-tabs">
-<button data-tab="studio">Studio</button>
-        <button class="active" data-tab="1br">1BR</button>
-        <button data-tab="2br">2BR</button>
-        <button data-tab="3br">3BR</button>
-        
+<h2>&#128200; Price Trends</h2>
+<span class="trends-meta">Last updated Mar 23, 2026 &middot; Comparing Mar 2026 vs Feb 2026</span>
 </div>
 
-
-<div class="chart-wrap" id="chart-studio-wrap" style="display:none">
-<h3>Studio — tracked units</h3>
-<div class="chart-meta">Feb $1,180 → Mar <strong>$1,210/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$30 · Increasing</span></div>
-<div style="height:200px;position:relative"><canvas id="chart-studio"></canvas></div>
+<div class="chart-wrap" id="price-chart-wrap">
+<h3>Price History by Room Type</h3>
+<div style="height:260px;position:relative"><canvas id="price-trend-chart"></canvas></div>
 </div>
-
-<div class="chart-wrap" id="chart-1br-wrap">
-<h3>1BR — tracked units</h3>
-<div class="chart-meta">Feb $1,480 → Mar <strong>$1,507/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$27 · Increasing</span></div>
-<div style="height:200px;position:relative"><canvas id="chart-1br"></canvas></div>
-</div>
-
-<div class="chart-wrap" id="chart-2br-wrap" style="display:none">
-<h3>2BR — tracked units</h3>
-<div class="chart-meta">Feb $2,010 → Mar <strong>$2,040/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$60 · Increasing</span></div>
-<div style="height:200px;position:relative"><canvas id="chart-2br"></canvas></div>
-</div>
-
-<div class="chart-wrap" id="chart-3br-wrap" style="display:none">
-<h3>3BR — tracked units</h3>
-<div class="chart-meta">No 3BR units tracked at this property</div>
-<div style="height:200px;position:relative"><canvas id="chart-3br"></canvas></div>
-</div>
-
 
 <table class="pt-table">
 <thead>
@@ -114,30 +86,23 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>Studio</td>
 <td>$1,180/mo</td>
-<td class="pt-current">$1,210/mo</td>
-<td><span style="color:#dc2626;font-weight:700">↑ +$30</span></td>
-<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+<td class="pt-current">$1,210/mo <span style="color:#7c3aed;font-size:12px;margin-left:4px">●</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$30</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>1BR</td>
 <td>$1,480/mo</td>
-<td class="pt-current">$1,507/mo</td>
-<td><span style="color:#dc2626;font-weight:700">↑ +$27</span></td>
-<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
+<td class="pt-current">$1,507/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$27</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>2BR</td>
 <td>$2,010/mo</td>
-<td class="pt-current">$2,040/mo</td>
-<td><span style="color:#dc2626;font-weight:700">↑ +$60</span></td>
-<td><span style="color:#dc2626;font-weight:700">↑ Increasing</span></td>
-</tr>
-<tr>
-<td>3BR</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>No data</td>
+<td class="pt-current">$2,040/mo <span style="color:#0891b2;font-size:12px;margin-left:4px">●</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$30</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 </tbody>
 </table>
@@ -250,91 +215,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 </div>
 
-
-const CHART_OPTS = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      callbacks: {
-        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
-      }
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: false,
-      ticks: { callback: v => '$' + v.toLocaleString() }
-    }
-  }
-};
-
-// ── Price Trends tab switching ──
-document.querySelectorAll('.room-tabs button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.room-tabs button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab = btn.dataset.tab;
-    ['studio','1br','2br','3br'].forEach(t => {
-      const wrap = document.getElementById('chart-' + t + '-wrap');
-      if (wrap) wrap.style.display = t === tab ? 'block' : 'none';
-    });
   });
-});
-
-new Chart(document.getElementById('chart-studio'), {
-  type: 'line',
-  data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
-    datasets: [{
-      label: 'Studio',
-      data: [1180, 1180, 1210],
-      borderColor: '#dc2626',
-      backgroundColor: 'rgba(220,38,38,0.08)',
-      fill: true,
-      tension: 0.3,
-      pointRadius: 4,
-      pointHoverRadius: 6
-    }]
-  },
-  options: CHART_OPTS
-});
-
-new Chart(document.getElementById('chart-1br'), {
-  type: 'line',
-  data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
-    datasets: [{
-      label: '1BR',
-      data: [1480, 1480, 1507],
-      borderColor: '#dc2626',
-      backgroundColor: 'rgba(220,38,38,0.08)',
-      fill: true,
-      tension: 0.3,
-      pointRadius: 4,
-      pointHoverRadius: 6
-    }]
-  },
-  options: CHART_OPTS
-});
-
-new Chart(document.getElementById('chart-2br'), {
-  type: 'line',
-  data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
-    datasets: [{
-      label: '2BR',
-      data: [1980, 2010, 2040],
-      borderColor: '#dc2626',
-      backgroundColor: 'rgba(220,38,38,0.08)',
-      fill: true,
-      tension: 0.3,
-      pointRadius: 4,
-      pointHoverRadius: 6
-    }]
-  },
-  options: CHART_OPTS
 });
 
 // No data for 3BR

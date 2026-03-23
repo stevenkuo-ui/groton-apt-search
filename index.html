@@ -130,7 +130,7 @@ footer a{color:var(--accent);text-decoration:none}
 <div class="tab-panel" id="tab-trends">
 <div class="trends-intro">
 <h2>📈 City Price Trends</h2>
-<p>Average 1BR rent across Groton, Norwich, New London, Mystic, and Waterford — tracked monthly since January 2026.</p>
+<p>Average rent across Groton, Norwich, New London, Mystic, and Waterford — tracked monthly since January 2026 (Studio, 1BR, 2BR, 3BR where available).</p>
 </div>
 <div class="region-stats">
 <div class="reg-stat">
@@ -154,36 +154,30 @@ footer a{color:var(--accent);text-decoration:none}
 <div class="rs-sub up">Avg 1BR $2,380</div>
 </div>
 </div>
-<div class="rt-tabs">
-<button data-rt="studio">Studio</button>
-<button class="active" data-rt="1br">1 BR</button>
-<button data-rt="2br">2 BR</button>
-<button data-rt="3br">3 BR</button>
-</div>
 <div class="city-chart-grid">
 <div class="city-tcard">
 <h3>🌊 Groton</h3>
-<div class="ct-sub">12 properties · Avg 1BR: $1,890</div>
+<div class="ct-sub">12 properties · All room types tracked</div>
 <canvas id="idx-chart-groton" height="180"></canvas>
 </div>
 <div class="city-tcard">
 <h3>🏙 Norwich</h3>
-<div class="ct-sub">6 properties · Avg 1BR: $1,375</div>
+<div class="ct-sub">6 properties · All room types tracked</div>
 <canvas id="idx-chart-norwich" height="180"></canvas>
 </div>
 <div class="city-tcard">
 <h3>⚓ New London</h3>
-<div class="ct-sub">5 properties · Avg 1BR: $1,520</div>
+<div class="ct-sub">5 properties · All room types tracked</div>
 <canvas id="idx-chart-nl" height="180"></canvas>
 </div>
 <div class="city-tcard">
 <h3>🏞 Mystic</h3>
-<div class="ct-sub">3 properties · Avg 1BR: $2,380</div>
+<div class="ct-sub">3 properties · All room types tracked</div>
 <canvas id="idx-chart-mystic" height="180"></canvas>
 </div>
 <div class="city-tcard">
 <h3>💧 Waterford</h3>
-<div class="ct-sub">2 properties · Avg 1BR: $1,640</div>
+<div class="ct-sub">2 properties · All room types tracked</div>
 <canvas id="idx-chart-waterford" height="180"></canvas>
 </div>
 </div>
@@ -382,58 +376,83 @@ document.querySelectorAll('.tab-bar button').forEach(btn => {
   });
 });
 
-// ── Index city trend charts ──
-const IDX_CHART_OPTS = {
-  responsive: true,
-  maintainAspectRatio: true,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      callbacks: {
-        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
-      }
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: false,
-      ticks: { callback: v => '$' + v.toLocaleString() }
-    }
-  }
+// ── Index city trend charts (multi-line) ──
+{
+  'groton': [
+    { label: 'Studio', data: [1382, 1404, 1419], borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '1BR', data: [1722, 1735, 1758], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '2BR', data: [2232, 2252, 2301], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '3BR', data: [2895, 2910, 2962], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+  ],
+  'norwich': [
+    { label: 'Studio', data: [1117, 1117, 1142], borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '1BR', data: [1359, 1375, 1390], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '2BR', data: [1714, 1735, 1755], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+  ],
+  'nl': [
+    { label: 'Studio', data: [1239, 1257, 1262], borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '1BR', data: [1541, 1563, 1572], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '2BR', data: [2035, 2062, 2086], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+  ],
+  'mystic': [
+    { label: 'Studio', data: [1575, 1600, 1600], borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '1BR', data: [2130, 2155, 2184], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '2BR', data: [2822, 2872, 2922], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '3BR', data: [3895, 3950, 3995], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+  ],
+  'waterford': [
+    { label: 'Studio', data: [1290, 1307, 1313], borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '1BR', data: [1578, 1585, 1608], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+    { label: '2BR', data: [1965, 2002, 2028], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,0.08)', fill: true, tension: 0.3, pointRadius: 3, pointHoverRadius: 5, spanGaps: true },
+  ],
 };
 
-// 1BR data by city
-const idxGroton   = [1820, 1870, 1890];
-const idxNorwich  = [1310, 1360, 1375];
-const idxNL      = [1450, 1510, 1520];
-const idxMystic  = [2200, 2350, 2380];
-const idxWaterford = [1580, 1620, 1640];
+// Groton
+new Chart(document.getElementById('idx-chart-groton'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: CITY_CHARTS['groton']
+  },
+  options: CITY_CHART_OPTS
+});
+// Norwich
+new Chart(document.getElementById('idx-chart-norwich'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: CITY_CHARTS['norwich']
+  },
+  options: CITY_CHART_OPTS
+});
+// New London
+new Chart(document.getElementById('idx-chart-nl'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: CITY_CHARTS['nl']
+  },
+  options: CITY_CHART_OPTS
+});
+// Mystic
+new Chart(document.getElementById('idx-chart-mystic'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: CITY_CHARTS['mystic']
+  },
+  options: CITY_CHART_OPTS
+});
+// Waterford
+new Chart(document.getElementById('idx-chart-waterford'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: CITY_CHARTS['waterford']
+  },
+  options: CITY_CHART_OPTS
+});
 
-function idxChart(id, data, color) {
-  new Chart(document.getElementById(id), {
-    type: 'line',
-    data: {
-      labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
-      datasets: [{
-        label: '1BR',
-        data: data,
-        borderColor: color,
-        backgroundColor: color + '18',
-        fill: true,
-        tension: 0.3,
-        pointRadius: 4,
-        pointHoverRadius: 6
-      }]
-    },
-    options: IDX_CHART_OPTS
-  });
-}
-
-idxChart('idx-chart-groton',    idxGroton,     '#1557ff');
-idxChart('idx-chart-norwich',   idxNorwich,    '#16a34a');
-idxChart('idx-chart-nl',        idxNL,         '#f59e0b');
-idxChart('idx-chart-mystic',    idxMystic,     '#9333ea');
-idxChart('idx-chart-waterford', idxWaterford,  '#0ea5e9');
 </script>
 </body>
 </html>

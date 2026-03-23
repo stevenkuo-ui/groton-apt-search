@@ -29,8 +29,8 @@ ul{padding-left:20px}li{margin-bottom:4px}
 /* Price Trends section */
 .card{background:var(--card,#fff);border:1px solid var(--line,#d8dee8);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
 .pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
-.pt-table th{text-align:left;padding:10px 128px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
-.pt-table td{padding:10px 128px;border-bottom:1px solid #f0f4fa;background:#fff}
+.pt-table th{text-align:left;padding:10px 16px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
+.pt-table td{padding:10px 16px;border-bottom:1px solid #f0f4fa;background:#fff}
 .pt-table tr:last-child td{border-bottom:none}
 .pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
 .pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
@@ -62,21 +62,21 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <span class="trends-meta">Last updated Mar 23, 2026 · Comparing Mar 2026 vs Feb 2026</span>
 </div>
 <div class="room-tabs">
-<button class="active" data-tab="studio">Studio</button>
-        <button class="" data-tab="1br">1BR</button>
-        <button class="" data-tab="2br">2BR</button>
-        <button class="" data-tab="3br">3BR</button>
+<button data-tab="studio">Studio</button>
+        <button class="active" data-tab="1br">1BR</button>
+        <button data-tab="2br">2BR</button>
+        <button data-tab="3br">3BR</button>
         
 </div>
 
 
-<div class="chart-wrap" id="chart-studio-wrap" style="display:block">
+<div class="chart-wrap" id="chart-studio-wrap" style="display:none">
 <h3>Studio — tracked units</h3>
 <div class="chart-meta">Feb $1,450 → Mar <strong>$1,450/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$25 · Increasing</span></div>
 <div style="height:200px;position:relative"><canvas id="chart-studio"></canvas></div>
 </div>
 
-<div class="chart-wrap" id="chart-1br-wrap" style="display:none">
+<div class="chart-wrap" id="chart-1br-wrap">
 <h3>1BR — tracked units</h3>
 <div class="chart-meta">Feb $1,825 → Mar <strong>$1,850/mo</strong> · <span style="color:#dc2626;font-weight:700">↑ +$50 · Increasing</span></div>
 <div style="height:200px;position:relative"><canvas id="chart-1br"></canvas></div>

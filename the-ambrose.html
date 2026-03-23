@@ -3,23 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Ambrose</title>
+<title>The Ambrose — b7 Properties</title>
 <style>
 :root{--bg:#eef3f9;--card:#fff;--text:#172033;--muted:#667085;--line:#d8dee8;--accent:#2563eb;--soft:#eef4ff;--hero1:#0f172a;--hero2:#1d4ed8;}
 *{box-sizing:border-box}body{margin:0;padding:28px;background:linear-gradient(180deg,#f7f9fc 0%,#eef3f9 100%);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 .wrap{max-width:1240px;margin:0 auto}.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;border-radius:24px;padding:34px;box-shadow:0 20px 40px rgba(37,99,235,.22);margin-bottom:20px}.hero p{color:rgba(255,255,255,.85)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
-.chip{display:inline-block;margin:4px 8px 0 0;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);font-size:13px}.muted{color:var(--muted)}
 .mini{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2ff;border:1px solid #d9e2ff;color:#31429c;font-size:11px;margin:4px 6px 0 0}
 .btn{display:inline-block;padding:10px 14px;border:1px solid #cfe0ff;background:var(--soft);border-radius:12px;margin-right:10px;margin-top:10px;font-weight:600}
 .figure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .figure-card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fbfcff}
-.figure-card img{max-width:100%;height:auto;display:block;background:#f3f6fb}
 .figure-title{font-weight:700;margin-bottom:10px}
 .figure-note{margin-top:8px;color:var(--muted);font-size:13px}
-h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
+h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}h3{margin:16px 0 8px;font-size:15px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 ul{padding-left:20px}li{margin-bottom:4px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}
+.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}
+.feature-item::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{padding:10px 12px;border:1px solid var(--line);text-align:left}
+th{background:#f7f9fc;font-weight:600}
 </style>
 </head>
 <body>
@@ -27,69 +31,101 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- HEADER -->
 <div class="hero">
-<div class="muted" style="color:rgba(255,255,255,.7);font-size:13px">Groton</div>
+<div style="color:rgba(255,255,255,.7);font-size:13px">Groton</div>
 <h1>The Ambrose</h1>
-<p>Strong candidate with a confirmed official site, published pricing, and a strong amenity set. Near the Sub Base. A live inquiry confirmed a 3-day notice requirement for occupied units and a $50 admin fee.</p>
-<div><span class="mini">Pool</span><span class="mini">Fitness center</span><span class="mini">EV charging</span><span class="mini">Dog park</span><span class="mini">Package lockers</span><span class="mini">Near Sub Base</span></div>
+<p>Fully renovated pet-friendly community at 12 Kamaha Street — 1BR $1,895/mo, 2BR $2,195/mo, with $99/month community fee covering heat, hot water, gas, water/sewer, trash, renters insurance &amp; credit building.</p>
+<div><span class="mini">Heat included</span><span class="mini">Hot water included</span><span class="mini">Pet-friendly</span><span class="mini">Washer/dryer</span><span class="mini">No security deposit</span><span class="mini">5 min to Sub Base</span></div>
 </div>
 
 <!-- CONTACT & OFFICE HOURS -->
 <div class="card">
 <h2>Contact & Office Hours</h2>
-<p><strong>Address:</strong> Groton, CT<br>
-<em>Contact property directly for pricing and availability.</em></p>
+<p><strong>Address:</strong> 12 Kamaha Street, Groton, CT 06340</p>
+<p><strong>Property Manager:</strong> Martha — <a href="mailto:martha@b7properties.com">martha@b7properties.com</a></p>
+<p><strong>Phone:</strong> <a href="tel:860-400-2050">(860) 400-2050</a></p>
+<p><strong>Main office:</strong> <a href="tel:401-396-9777">(401) 396-9777</a></p>
+<p><strong>Tours:</strong> <a href="https://calendar.app.google/tjUXeFGnkgae2hbQ9">Schedule via Google Calendar</a> or <a href="https://my.mattport.com/show/?m=Gkgou7SJf2h">3D Tour</a></p>
+<p><strong>Apply:</strong> <a href="https://bsevenproperties.appfolio.com/listings?filters%5Bproperty_list%5D=Groton+Living+I">AppFolio portal</a></p>
 </div>
 
-<!-- DETAILS -->
+<!-- FLOOR PLANS -->
 <div class="card">
-<h2>Details</h2>
-<p><strong>Pricing:</strong> $1,550–$2,125 for current 1BR range (varies by floor plan; see below)</p>
-<p><strong>Availability:</strong> Three 1BR plans confirmed available. Live inquiry noted a 3-day notice requirement for occupied units and a $50 admin fee.</p>
-<p><strong>Floor plans:</strong></p>
+<h2>Floor Plans &amp; Pricing</h2>
+
+<table>
+<thead><tr><th>Plan</th><th>Sqft</th><th>Rent</th></tr></thead>
+<tbody>
+<tr>
+<td>1-Bedroom, 1-Bath</td>
+<td>724 sqft</td>
+<td><strong>$1,895/month</strong></td>
+</tr>
+<tr>
+<td>2-Bedroom, 1-Bath</td>
+<td>830 sqft</td>
+<td><strong>$2,195/month</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p style="margin-top:12px"><strong>Community Fee:</strong> $99/month — includes heat, hot water, gas, water/sewer, trash removal, renters insurance, resident rewards program, and credit building.</p>
+<p><strong>Up-front costs:</strong> First month's rent + fees. <em>No up-front security deposit.</em> Proof of utilities required before move-in.</p>
+</div>
+
+<!-- UNIT FEATURES -->
+<div class="card">
+<h2>Unit Features</h2>
 <ul>
-<li>Plan A — 720 sqft — 1BR/1BA — $1,550 — Available</li>
-<li>Plan B — 850 sqft — 1BR/1BA — $1,775 — Available</li>
-<li>Plan C — 888 sqft — 1BR/1BA — $1,800 — Available</li>
+<li>Open-concept floor plan</li>
+<li>Stainless steel appliances</li>
+<li>Granite countertops</li>
+<li>Shaker-style kitchen cabinets</li>
+<li>Engineered hardwood flooring</li>
+<li>Recessed lighting</li>
+<li>In-unit washer and dryer</li>
+<li>In-wall A/C units</li>
+<li>Shared patio or balcony</li>
+<li>Security system &amp; ample outdoor lighting</li>
 </ul>
 </div>
+
+<!-- AMENITIES -->
+<div class="card">
+<h2>Property Amenities</h2>
+<ul>
+<li>Surveillance system</li>
+<li>Grilling area</li>
+<li>Free off-street parking (1 assigned spot included)</li>
+<li>Full-time on-site team</li>
+<li>Online resident portal with easy payments</li>
+<li>Prompt maintenance requests</li>
+</ul>
+</div>
+
+<!-- PET POLICY -->
 <div class="card">
 <h2>Pet Policy</h2>
-<p>Contact property for pet policy.</p>
-</div>
-<div class="card">
-<h2>Commute & Neighborhood</h2>
-<p>Groton location near Naval Sub Base.<br>
-<strong>Commute:</strong> 5 min to Naval Sub Base</p>
-</div>
-<!-- FEATURES / AMENITIES -->
-<div class="card">
-<h2>Features / amenities</h2>
+<p>Pet-friendly community. Pet fees:</p>
 <ul>
-<li>Saltwater pool</li>
-<li>State-of-the-art fitness center</li>
-<li>EV charging stations</li>
-<li>Dog park</li>
-<li>Package lockers ( Amazon Hub )</li>
-<li>Outdoor lounge with grilling stations</li>
-<li>Near the Groton Submarine Base and Electric Boat</li>
-<li>Equal Opportunity Housing</li>
+<li><strong>Registration fee:</strong> $250 one-time</li>
+<li><strong>Dog:</strong> $40/month</li>
+<li><strong>Cat:</strong> $30/month</li>
 </ul>
 </div>
 
-<!-- OTHER DETAILS -->
+<!-- COMMUTE -->
 <div class="card">
-<h2>Other details</h2>
-<ul>
-<li>3-day notice required for occupied units</li>
-<li>$50 admin fee</li>
-</ul>
+<h2>Commute &amp; Neighborhood</h2>
+<p>5-minute commute to local employers. 2 miles from Interstate 95. Near Naval Submarine Base &amp; Electric Boat.</p>
 </div>
 
 <!-- SOURCES -->
 <div class="card">
 <h2>Sources</h2>
 <ul>
-<li><a href="https://www.theambroseapts.com">https://www.theambroseapts.com</a></li>
+<li><a href="https://www.b7properties.com/ambrose">b7properties.com/ambrose</a> — official property page (March 2026)</li>
+<li><a href="https://bsevenproperties.appfolio.com/listings?filters%5Bproperty_list%5D=Groton+Living+I">AppFolio application portal</a></li>
+<li><a href="https://my.mattport.com/show/?m=Gkgou7SJf2h">3D Tour</a></li>
 </ul>
 <a class="btn" href="index.html">← Back to main page</a>
 </div>

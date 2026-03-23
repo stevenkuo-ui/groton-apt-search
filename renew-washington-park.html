@@ -181,6 +181,83 @@ ul{padding-left:20px}li{margin-bottom:4px}
 });
 
 // No data for 3BR
+<script>
+new Chart(document.getElementById('price-trend-chart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    datasets: [
+      {
+            "label": "Studio",
+            "data": [
+                  1185,
+                  1185,
+                  1205
+            ],
+            "borderColor": "#7c3aed",
+            "backgroundColor": "rgba(124,58,237,0.08)",
+            "fill": true,
+            "tension": 0.3,
+            "pointRadius": 4,
+            "pointHoverRadius": 6,
+            "spanGaps": true
+      },
+      {
+            "label": "1BR",
+            "data": [
+                  1440,
+                  1455,
+                  1469
+            ],
+            "borderColor": "#2563eb",
+            "backgroundColor": "rgba(37,99,235,0.08)",
+            "fill": true,
+            "tension": 0.3,
+            "pointRadius": 4,
+            "pointHoverRadius": 6,
+            "spanGaps": true
+      },
+      {
+            "label": "2BR",
+            "data": [
+                  1905,
+                  1930,
+                  1965
+            ],
+            "borderColor": "#0891b2",
+            "backgroundColor": "rgba(8,145,178,0.08)",
+            "fill": true,
+            "tension": 0.3,
+            "pointRadius": 4,
+            "pointHoverRadius": 6,
+            "spanGaps": true
+      }
+]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: { usePointStyle: true, padding: 16, font: { size: 12 } }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) { return ' ' + ctx.dataset.label + ': $' + ctx.raw.toLocaleString() + '/mo'; }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+        ticks: { callback: function(v) { return '$' + v.toLocaleString(); } }
+      }
+    }
+  }
+});
+</script>
 </body>
 </html>
 

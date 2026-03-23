@@ -383,5 +383,36 @@ document.querySelectorAll('.tab-bar button').forEach(function(btn) {
   });
 });
 </script>
+
+<script>
+// ── Index city trend charts ──
+(function() {
+  var IDX_CHART_OPTS = {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx) { return ' $' + ctx.raw.toLocaleString() + '/mo'; } } } },
+    scales: { y: { beginAtZero: false, ticks: { callback: function(v) { return '$' + v.toLocaleString(); } } } }
+  };
+  var idxGroton    = [1820, 1870, 1890];
+  var idxNorwich   = [1310, 1360, 1375];
+  var idxNL        = [1450, 1510, 1520];
+  var idxMystic    = [2200, 2350, 2380];
+  var idxWaterford = [1580, 1620, 1640];
+  function idxChart(id, data, color) {
+    var ctx = document.getElementById(id);
+    if (!ctx) return;
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'], datasets: [{ label: '1BR', data: data, borderColor: color, backgroundColor: color + '18', fill: true, tension: 0.3, pointRadius: 4, pointHoverRadius: 6 }] },
+      options: IDX_CHART_OPTS
+    });
+  }
+  idxChart('idx-chart-groton',    idxGroton,    '#1557ff');
+  idxChart('idx-chart-norwich',  idxNorwich,   '#16a34a');
+  idxChart('idx-chart-nl',       idxNL,        '#f59e0b');
+  idxChart('idx-chart-mystic',   idxMystic,    '#9333ea');
+  idxChart('idx-chart-waterford',idxWaterford, '#0ea5e9');
+})();
+</script>
 </body>
 </html>

@@ -11,6 +11,7 @@
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
 .mini{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2ff;border:1px solid #d9e2ff;color:#31429c;font-size:11px;margin:4px 6px 0 0}
 .btn{display:inline-block;padding:10px 14px;border:1px solid #cfe0ff;background:var(--soft);border-radius:12px;margin-right:10px;margin-top:10px;font-weight:600}
+.mini{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2ff;border:1px solid #d9e2ff;color:#31429c;font-size:11px;margin:4px 6px 0 0}
 .figure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .figure-card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fbfcff}
 .figure-card img{max-width:100%;height:auto;display:block;background:#f3f6fb}
@@ -18,6 +19,9 @@
 .figure-note{margin-top:8px;color:var(--muted);font-size:13px}
 h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}
+.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}
+.feature-item::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
 ul{padding-left:20px}li{margin-bottom:4px}
 </style>
 </head>
@@ -27,19 +31,20 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="hero">
 <div class="muted" style="color:rgba(255,255,255,.7);font-size:13px">Mystic</div>
 <h1>Harbor Heights Mystic</h1>
-<p>Large luxury Mystic option that Tavily surfaced via its official site rather than broker snippets.</p>
+<p>Luxury two-building community (Enclave + Beacon) in downtown Mystic at 50 Perkins Farm Drive — 21 named floor plans, saltwater pool, Peloton fitness, dog spa.</p>
+<div><span class="mini">Saltwater pool</span><span class="mini">Peloton fitness</span><span class="mini">Dog spa</span><span class="mini">Pet-friendly</span><span class="mini">Elevator</span><span class="mini">Washer/dryer</span><span class="mini">Heated floors</span></div>
 </div>
 
 <!-- CONTACT & OFFICE HOURS -->
 <div class="card">
 <h2>Contact & Office Hours</h2>
-<p>Phone: <a href="tel:+18607642667">(860) 764-2667</a><br>Address: 50 Perkins Farm Drive, Mystic, CT 06355<br>Leasing office hours: Mon–Wed 9AM–5:30PM, Thu 9AM–7PM, Fri 9AM–5:30PM, Sat by appointment, Sun closed</p>
+<p><strong>Address:</strong> 50 Perkins Farm Drive, Mystic, CT 06355<br><strong>Phone:</strong> <a href="tel:+18607642667">(860) 764-2667</a><br><strong>Office hours:</strong> Mon–Fri 9AM–5:30PM, Sat by appointment, Sun closed</p>
 </div>
 
 <!-- DETAILS (merged pricing + availability + floor plans) -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing:</strong> $2,419–$3,641/month (1BR–3BR+ range; verified on hmystic.com — contact leasing office for current availability and live pricing)</p>
+<p><strong>Pricing:</strong> Contact leasing office for current pricing — hmystic.com does not publish pricing publicly; a prior broker listing showed $2,419–$3,641 as a reference range.</p>
 <p><strong>Availability:</strong> Harbor Heights is actively leasing. Contact the leasing office at <a href="tel:+18607642667">(860) 764-2667</a> for current availability.</p>
 <p><strong>Floor plans:</strong> Two sub-communities — Enclave (newer, penthouse/loft-style) and Beacon (established) — with 1, 2, and 3 bedroom options ranging 665–1,638 sq ft.</p>
 

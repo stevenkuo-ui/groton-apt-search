@@ -372,68 +372,16 @@ footer a{color:var(--accent);text-decoration:none}
 
 <script>
 // ── Index tab switching ──
-document.querySelectorAll('.tab-bar button').forEach(btn => {
-  btn.addEventListener('click', () => {
+document.querySelectorAll('.tab-bar button').forEach(function(btn) {
+  btn.addEventListener('click', function() {
     if (btn.dataset.tab === 'map') return;
-    document.querySelectorAll('.tab-bar button').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-bar button').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
     btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    var panel = document.getElementById('tab-' + btn.dataset.tab);
+    if (panel) panel.classList.add('active');
   });
 });
-
-// ── Index city trend charts ──
-const IDX_CHART_OPTS = {
-  responsive: true,
-  maintainAspectRatio: true,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      callbacks: {
-        label: ctx => ' $' + ctx.raw.toLocaleString() + '/mo'
-      }
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: false,
-      ticks: { callback: v => '$' + v.toLocaleString() }
-    }
-  }
-};
-
-// 1BR data by city
-const idxGroton   = [1820, 1870, 1890];
-const idxNorwich  = [1310, 1360, 1375];
-const idxNL      = [1450, 1510, 1520];
-const idxMystic  = [2200, 2350, 2380];
-const idxWaterford = [1580, 1620, 1640];
-
-function idxChart(id, data, color) {
-  new Chart(document.getElementById(id), {
-    type: 'line',
-    data: {
-      labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
-      datasets: [{
-        label: '1BR',
-        data: data,
-        borderColor: color,
-        backgroundColor: color + '18',
-        fill: true,
-        tension: 0.3,
-        pointRadius: 4,
-        pointHoverRadius: 6
-      }]
-    },
-    options: IDX_CHART_OPTS
-  });
-}
-
-idxChart('idx-chart-groton',    idxGroton,     '#1557ff');
-idxChart('idx-chart-norwich',   idxNorwich,    '#16a34a');
-idxChart('idx-chart-nl',        idxNL,         '#f59e0b');
-idxChart('idx-chart-mystic',    idxMystic,     '#9333ea');
-idxChart('idx-chart-waterford', idxWaterford,  '#0ea5e9');
 </script>
 </body>
 </html>

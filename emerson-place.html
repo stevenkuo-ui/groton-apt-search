@@ -17,6 +17,9 @@
 .figure-card img{max-width:100%;height:auto;display:block;background:#f3f6fb}
 .figure-title{font-weight:700;margin-bottom:10px}
 .figure-note{margin-top:8px;color:var(--muted);font-size:13px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}
+.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}
+.feature-item::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
 h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 ul{padding-left:20px}li{margin-bottom:4px}
@@ -75,28 +78,28 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- FEATURES / AMENITIES -->
 <div class="card">
 <h2>Features / amenities</h2>
-<ul>
-<li>In-unit washer/dryer</li>
-<li>In-wall A/C</li>
-<li>Stainless steel appliances</li>
-<li>Granite countertops</li>
-<li>Shaker-style kitchen cabinets</li>
-<li>Engineered hardwood flooring</li>
-<li>Recessed lighting</li>
-<li>Open-concept floor plan</li>
-<li>Security system</li>
-<li>Ample outdoor lighting</li>
-<li>Pet-friendly</li>
-<li>Pet play area</li>
-<li>Community grilling and patio area</li>
-<li>Full-service WiFi (via $99/month community fee)</li>
-<li>Trash removal (via $99/month community fee)</li>
-<li> renters insurance (via $99/month community fee)</li>
-<li>Resident reward program (via $99/month community fee)</li>
-<li>Credit building program (via $99/month community fee)</li>
-<li>Online resident portal for payments and maintenance requests</li>
-<li>Full-time on-site team</li>
-</ul>
+<div class="features-grid">
+<div class="feature-item">In-unit washer/dryer</div>
+<div class="feature-item">In-wall A/C</div>
+<div class="feature-item">Stainless steel appliances</div>
+<div class="feature-item">Granite countertops</div>
+<div class="feature-item">Shaker-style kitchen cabinets</div>
+<div class="feature-item">Engineered hardwood flooring</div>
+<div class="feature-item">Recessed lighting</div>
+<div class="feature-item">Open-concept floor plan</div>
+<div class="feature-item">Security system</div>
+<div class="feature-item">Ample outdoor lighting</div>
+<div class="feature-item">Pet-friendly</div>
+<div class="feature-item">Pet play area</div>
+<div class="feature-item">Community grilling and patio area</div>
+<div class="feature-item">Full-service WiFi (via $99/month community fee)</div>
+<div class="feature-item">Trash removal (via $99/month community fee)</div>
+<div class="feature-item">Renters insurance (via $99/month community fee)</div>
+<div class="feature-item">Resident reward program (via $99/month community fee)</div>
+<div class="feature-item">Credit building program (via $99/month community fee)</div>
+<div class="feature-item">Online resident portal for payments and maintenance requests</div>
+<div class="feature-item">Full-time on-site team</div>
+</div>
 </div>
 
 <!-- OTHER DETAILS -->

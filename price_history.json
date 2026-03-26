@@ -753,6 +753,11 @@
       {
         "price": 1350,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1325,
+        "date": "2026-03-26",
+        "note": "Standard 1BR increased from $1,295 to $1,325 per ApartmentFinder.com March 2026"
       }
     ],
     "2BR": [
@@ -767,6 +772,11 @@
       {
         "price": 1715,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1595,
+        "date": "2026-03-26",
+        "note": "Decreased from $1,715 to $1,595 per ApartmentFinder.com March 2026"
       }
     ],
     "Studio": [
@@ -781,12 +791,22 @@
       {
         "price": 1120,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1295,
+        "date": "2026-03-26",
+        "note": "Increased from $1,120 to $1,295 per ApartmentFinder.com March 2026"
       }
     ],
-    "1BR/1BA": {
-      "price": 1295,
-      "date": "2026-03-25",
-      "note": "Decreased from $1,350 per Apartments.com March 2026"
+    "1BR Standard": {
+      "price": 1325,
+      "date": "2026-03-26",
+      "note": "Standard 1BR at $1,325/mo — new distinction from Large 1BR ($1,495) per ApartmentFinder.com March 2026"
+    },
+    "Large 1BR": {
+      "price": 1495,
+      "date": "2026-03-26",
+      "note": "NEW unit type — Large 1BR at $1,495/mo per ApartmentFinder.com March 2026"
     }
   },
   "courtview-square": {

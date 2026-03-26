@@ -148,6 +148,11 @@
       {
         "price": 1507,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1862,
+        "date": "2026-03-26",
+        "note": "Fairfield 1BR low end; range $1,862-$1,927; 4 units available"
       }
     ],
     "2BR": [
@@ -162,6 +167,11 @@
       {
         "price": 2040,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2272,
+        "date": "2026-03-26",
+        "note": "Providence 2BR; 2 units available"
       }
     ],
     "Studio": [
@@ -176,6 +186,11 @@
       {
         "price": 1210,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1572,
+        "date": "2026-03-26",
+        "note": "New Haven Studio; range $1,572-$1,747; 4 units available"
       }
     ]
   },
@@ -193,6 +208,11 @@
       {
         "price": 1875,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1875,
+        "date": "2026-03-26",
+        "note": "Available 05/15/2026; no change from prior; prior estimate $2,050"
       }
     ],
     "2BR": [
@@ -207,6 +227,11 @@
       {
         "price": 2225,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2050,
+        "date": "2026-03-26",
+        "note": "Available 05/10/2026; dropped from $2,195"
       }
     ],
     "3BR": [
@@ -682,6 +707,11 @@
       {
         "price": 2375,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2245,
+        "date": "2026-03-26",
+        "note": "Corrected to $2,245 per live site; prior estimate $2,195"
       }
     ],
     "Studio": [
@@ -713,6 +743,11 @@
       {
         "price": 1325,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1025,
+        "date": "2026-03-26",
+        "note": "Per Realtor.com; dropped from prior estimate $1,200"
       }
     ],
     "2BR": [
@@ -727,6 +762,11 @@
       {
         "price": 1675,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1300,
+        "date": "2026-03-26",
+        "note": "Per Realtor.com; ApartmentList showed $1,300"
       }
     ],
     "Studio": [

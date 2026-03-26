@@ -16,25 +16,19 @@
 .figure-card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fbfcff}
 .figure-card img{max-width:100%;height:auto;display:block;background:#f3f6fb}
 .figure-title{font-weight:700;margin-bottom:10px}
-.figure-note{margin-top:8px;color:var(--muted);font-size:13px}.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}.feature-item::before{content:"\2713";color:var(--accent);font-weight:700;flex-shrink:0}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}
+.figure-note{margin-top:8px;color:var(--muted);font-size:13px}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}
 h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 ul{padding-left:20px}li{margin-bottom:4px}
-
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}.feature-item::before{content:"\2713";color:var(--accent);font-weight:700;flex-shrink:0}
 /* Price Trends section */
-.card{background:var(--card,#fff);border:1px solid var(--line,#d8dee8);border-radius:18px;box-shadow:0 10px 28px rgba(15,23,42,.06);padding:24px;margin-bottom:18px}
 .pt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
 .pt-table th{text-align:left;padding:10px 16px;background:#f4f7fb;font-size:12px;font-weight:700;color:#667085;border-bottom:2px solid #d8dee8}
 .pt-table td{padding:10px 16px;border-bottom:1px solid #f0f4fa;background:#fff}
 .pt-table tr:last-child td{border-bottom:none}
 .pt-table tr:nth-child(even) td{background:#f8fafc}
-.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}
-.pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
+.pt-up{color:#dc2626;font-size:12px}.pt-down{color:#16a34a;font-size:12px}.pt-new{font-size:11px;color:#fff;background:#2563eb;padding:1px 6px;border-radius:5px;margin-left:5px;vertical-align:middle}
 .chart-wrap{background:#fafcff;border:1px solid #d8dee8;border-radius:14px;padding:20px;margin-bottom:16px}
-.room-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.room-tabs button{background:#eef2ff;border:1.5px solid #c7d7ff;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;color:#31429c;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.room-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
-.room-tabs button:hover:not(.active){border-color:#2563eb;color:#2563eb}
 .trends-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px}
 .trends-header h2{margin:0;font-size:20px;border:none;padding:0}
 .trends-meta{font-size:12px;color:#667085}
@@ -47,22 +41,15 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="hero">
 <div style="color:rgba(255,255,255,.7);font-size:13px">New London</div>
 <h1>Gull Harbor Apartments</h1>
-<p>One of the cleaner New London 1BR communities — confirmed live on gullharborct.com. Note: the /floorplans URL returns 404; use the main site or call (860) 437-6952 for floor plan details. 1BR/600 sqft confirmed at $1,695/mo per Apartments.com.</p>
+<p>Pet-friendly 1BR community at 83 Mansfield Road, New London. Official site: <strong>gullharborct.com</strong> (note: the /floorplans subdirectory returns HTTP 404 — use main site or call for floor plans and availability). 1BR/1BA up to 600 sqft confirmed at $1,695/mo per multiple aggregators (March 2026).</p>
 </div>
-
 
 <!-- PRICE TRENDS -->
 <div class="card" id="price-trends">
 <div class="trends-header">
 <h2>&#128200; Price Trends</h2>
-<span class="trends-meta">Last updated Mar 23, 2026 &middot; Comparing Mar 2026 vs Feb 2026</span>
+<span class="trends-meta">Last updated Mar 25, 2026 &middot; Comparing Mar 2026 vs Feb 2026</span>
 </div>
-
-<div class="chart-wrap" id="price-chart-wrap">
-<h3>Price History by Room Type</h3>
-<div style="height:260px;position:relative"><canvas id="price-trend-chart"></canvas></div>
-</div>
-
 <table class="pt-table">
 <thead>
 <tr>
@@ -75,47 +62,33 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </thead>
 <tbody>
 <tr>
-<td>Studio</td>
-<td>$1,245/mo</td>
-<td class="pt-current">$1,245/mo <span style="color:#7c3aed;font-size:12px;margin-left:4px">●</span></td>
-<td>—</td>
-<td><span style="color:#2563eb">&#8594; Stable</span></td>
-</tr>
-<tr>
 <td>1BR</td>
-<td>$1,525/mo</td>
-<td class="pt-current">$1,525/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
+<td>$1,695/mo</td>
+<td class="pt-current">$1,695/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
 <td>—</td>
 <td><span style="color:#2563eb">&#8594; Stable</span></td>
-</tr>
-<tr>
-<td>2BR</td>
-<td>$2,000/mo</td>
-<td class="pt-current">$2,025/mo <span style="color:#0891b2;font-size:12px;margin-left:4px">●</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$25</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <!-- /PRICE TRENDS -->
 
-
 <!-- CONTACT & OFFICE HOURS -->
 <div class="card">
 <h2>Contact & Office Hours</h2>
 <p><strong>Address:</strong> 83 Mansfield Road, New London, CT 06320<br>
-<strong>Phone:</strong> <a href="tel:860-437-6952">860-437-6952</a><br>
+<strong>Phone:</strong> <a href="tel:860-629-0025">860-629-0025</a> (main office via ApartmentSearch) or <a href="tel:860-390-4812">860-390-4812</a> (leasing via HotPads)<br>
+<strong>Office Hours:</strong> Mon–Fri 8:30am–5pm, Sat 8:30am–5pm, Sun closed</p>
 </div>
 
 <!-- DETAILS -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing:</strong> <strong>$1,695/mo</strong> for 1BR/1BA 600sqft (official floor plans page, March 2026). 12-month lease base rent $1,675/mo.</p>
-<p><strong>Availability:</strong> "Availability for 1 Bedroom Apartments" — contact property directly for specific unit availability.</p>
+<p><strong>Pricing:</strong> <strong>$1,695/mo</strong> for 1BR/1BA up to 600 sqft (confirmed via Apartments.com, HotPads, March 2026).</p>
+<p><strong>Availability:</strong> Contact property directly for specific unit availability — 1 unit confirmed on Zillow/Apartments.com as of March 2026.</p>
 <div class="figure-grid">
 <div class="figure-card">
-<div class="figure-title">1BR/1BA — 600 sqft</div>
+<div class="figure-title">1BR/1BA — up to 600 sqft</div>
 <img width="480" height="360" style="width:480px;max-width:100%;height:auto;flex-shrink:0;flex-grow:0;display:block;background:#f3f6fb" src="https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_576,h_260/s3/2/115242/gull%20harbor_1x1.jpg">
 <div class="figure-note">From $1,695/mo</div>
 </div>
@@ -124,20 +97,25 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <div class="card">
 <h2>Pet Policy</h2>
-<p>Contact property for pet policy.</p>
+<p>Cats and dogs welcome! Pet-friendly community confirmed via RentCafe, HotPads, and Trulia (March 2026).</p>
 </div>
 <div class="card">
 <h2>Commute & Neighborhood</h2>
-<p>Water-adjacent New London — near the waterfront.<br>
-<strong>Commute:</strong> 10 min to Naval Sub Base · Near waterfront</p>
+<p>Water-adjacent New London — less than 2 miles from the Connecticut coast.<br>
+<strong>Commute:</strong> ~10 min to Naval Sub Base · Near waterfront</p>
 </div>
 <!-- FEATURES / AMENITIES -->
 <div class="card">
 <h2>Features / amenities</h2>
 <div class="features-grid">
-<div class="feature-item">Pets OK</div>
-<div class="feature-item">Balcony</div>
+<div class="feature-item">Pet-friendly (cats &amp; dogs)</div>
+<div class="feature-item">Balcony (select units)</div>
 <div class="feature-item">Air conditioning</div>
+<div class="feature-item">On-site laundry</div>
+<div class="feature-item">Controlled access</div>
+<div class="feature-item">24-hour emergency maintenance</div>
+<div class="feature-item">Vaulted ceilings (top-floor units)</div>
+<div class="feature-item">Online rental payments</div>
 </div>
 </div>
 
@@ -145,17 +123,15 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="card">
 <h2>Sources</h2>
 <ul>
-<li><a href="https://www.gullharborct.com/floorplans/1-bedroom">gullharborct.com/floorplans/1-bedroom</a></li>
+<li><a href="https://www.gullharborct.com/" target="_blank">gullharborct.com</a> — main site (note: /floorplans returns HTTP 404 as of March 2026; call for floor plans)</li>
+<li><a href="https://www.apartments.com/gull-harbor-apartments-new-london-ct/wccp9fj/" target="_blank">Apartments.com listing</a></li>
+<li><a href="https://hotpads.com/gull-harbor-apartments-new-london-ct-06320-sm3k8j/pad" target="_blank">HotPads listing</a></li>
 </ul>
 <a class="btn" href="index.html">← Back to main page</a>
 </div>
 
 </div>
 
-  });
-});
-
-// No data for 3BR
 <script>
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
@@ -163,72 +139,27 @@ new Chart(document.getElementById('price-trend-chart'), {
     labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
     datasets: [
       {
-            "label": "Studio",
-            "data": [
-                  1225,
-                  1245,
-                  1245
-            ],
-            "borderColor": "#7c3aed",
-            "backgroundColor": "rgba(124,58,237,0.08)",
-            "fill": true,
-            "tension": 0.3,
-            "pointRadius": 4,
-            "pointHoverRadius": 6,
-            "spanGaps": true
-      },
-      {
-            "label": "1BR",
-            "data": [
-                  1500,
-                  1525,
-                  1525
-            ],
-            "borderColor": "#2563eb",
-            "backgroundColor": "rgba(37,99,235,0.08)",
-            "fill": true,
-            "tension": 0.3,
-            "pointRadius": 4,
-            "pointHoverRadius": 6,
-            "spanGaps": true
-      },
-      {
-            "label": "2BR",
-            "data": [
-                  1975,
-                  2000,
-                  2025
-            ],
-            "borderColor": "#0891b2",
-            "backgroundColor": "rgba(8,145,178,0.08)",
-            "fill": true,
-            "tension": 0.3,
-            "pointRadius": 4,
-            "pointHoverRadius": 6,
-            "spanGaps": true
+        label: "1BR",
+        data: [1695, 1695, 1695],
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37,99,235,0.08)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        spanGaps: true
       }
-]
+    ]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-        labels: { usePointStyle: true, padding: 16, font: { size: 12 } }
-      },
-      tooltip: {
-        callbacks: {
-          label: function(ctx) { return ' ' + ctx.dataset.label + ': $' + ctx.raw.toLocaleString() + '/mo'; }
-        }
-      }
+      legend: { display: true, position: 'top', labels: { usePointStyle: true, padding: 16, font: { size: 12 } } },
+      tooltip: { callbacks: { label: function(ctx) { return ' ' + ctx.dataset.label + ': $' + ctx.raw.toLocaleString() + '/mo'; } } }
     },
     scales: {
-      y: {
-        beginAtZero: false,
-        ticks: { callback: function(v) { return '$' + v.toLocaleString(); } }
-      }
+      y: { beginAtZero: false, ticks: { callback: function(v) { return '$' + v.toLocaleString(); } } }
     }
   }
 });

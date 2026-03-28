@@ -55,6 +55,12 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- NEWS -->
 <div class="news-card">
+<h2>📰 3BR increased $10 to $1,935/mo — March 28, 2026</h2>
+<p class="news-date">March 28, 2026</p>
+<p class="news-body">Per official eaglepointeapts.com/floorplans live scrape (March 28): 3BR/1BA increased from $1,925 to $1,935/mo (+$10). 3BR availability decreased from 4 to 2 units. 1BR and 2BR prices unchanged at $1,750 and $1,675/mo respectively.</p>
+</div>
+
+<div class="news-card">
 <h2>📰 Prices corrected from official floor plans — March 2026</h2>
 <p class="news-date">March 24, 2026</p>
 <p class="news-body">Prices updated to match official eaglepointeapts.com/floorplans page. 1BR is $1,750/mo (1 unit avail) — chart was showing $1,560, which was the blended/avg figure. 2BR is $1,675/mo (10 units avail) — chart was showing $2,080 which was inflated. 3BR $1,925/mo (4 units avail). Overall range $1,085–$2,113/mo depending on unit type.</p>
@@ -66,7 +72,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="card" id="price-trends">
 <div class="trends-header">
 <h2>&#128200; Price Trends</h2>
-<span class="trends-meta">Last updated Mar 24, 2026 &middot; Comparing Mar 2026 vs Feb 2026 — Updated Mar 24</span>
+<span class="trends-meta">Last updated Mar 28, 2026 &middot; Comparing Mar 2026 vs Feb 2026 — Updated Mar 28</span>
 </div>
 
 <div class="chart-wrap" id="price-chart-wrap">
@@ -106,6 +112,13 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <td><span style="color:#16a34a;font-weight:700">&#8595; &#8722;$380</span></td>
 <td><span style="color:#16a34a;font-weight:700">&#8595; Decreasing</span></td>
 </tr>
+<tr>
+<td>3BR</td>
+<td>$1,925/mo</td>
+<td class="pt-current">$1,935/mo <span style="color:#dc2626;font-size:12px;margin-left:4px">●</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$10</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing slightly</span></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -142,7 +155,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="figure-card">
 <div class="figure-title">3BR/1BA — 1,012 sqft</div>
 <img width="480" height="360" style="width:480px;max-width:100%;height:auto;flex-shrink:0;flex-grow:0;display:block;background:#f3f6fb" src="https://resource.rentcafe.com/image/upload/x_0,y_0,w_1280,h_960,c_crop/q_auto,f_auto,c_limit,w_576,h_260/s3/3/868989/eagle%20pointe_3_bed.jpg">
-<div class="figure-note">$1,925/mo · <strong>4 units available</strong></div>
+<div class="figure-note">$1,935/mo<span class="price-up">↑</span> · <strong>2 units available</strong></div>
 </div>
 </div>
 </div>
@@ -229,6 +242,21 @@ new Chart(document.getElementById('price-trend-chart'), {
             ],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",
+            "fill": true,
+            "tension": 0.3,
+            "pointRadius": 4,
+            "pointHoverRadius": 6,
+            "spanGaps": true
+      },
+      {
+            "label": "3BR",
+            "data": [
+                  1925,
+                  1925,
+                  1935
+            ],
+            "borderColor": "#dc2626",
+            "backgroundColor": "rgba(220,38,38,0.08)",
             "fill": true,
             "tension": 0.3,
             "pointRadius": 4,

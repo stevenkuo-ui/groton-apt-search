@@ -103,6 +103,11 @@
       {
         "price": 1875,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1895,
+        "date": "2026-04-03",
+        "note": "↑$20 from $1,875 — 1BR confirmed at $1,895/mo; 1BR Corner at $1,995/mo per b7properties.com April 2026"
       }
     ],
     "2BR": [
@@ -117,6 +122,11 @@
       {
         "price": 2495,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2345,
+        "date": "2026-04-03",
+        "note": "↑$50 from $2,495 per b7properties.com April 2026 — 2BR at $2,345/mo confirmed"
       }
     ],
     "Studio": [
@@ -313,6 +323,11 @@
       {
         "price": 1805,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2085,
+        "date": "2026-04-03",
+        "note": "↑$280 from $1,805 — 2 apartments available per official site, April 2026"
       }
     ],
     "2BR": [
@@ -327,6 +342,11 @@
       {
         "price": 2350,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2395,
+        "date": "2026-04-03",
+        "note": "↑$45 from $2,350 — per official site, April 2026"
       }
     ],
     "Studio": [
@@ -341,6 +361,11 @@
       {
         "price": 1450,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1870,
+        "date": "2026-04-03",
+        "note": "↑$420 from $1,450 — 3 apartments available per official site, April 2026"
       }
     ]
   },
@@ -542,6 +567,10 @@
       {
         "price": 1799,
         "date": "2026-03-25"
+      },
+      {
+        "price": 1709,
+        "date": "2026-04-03"
       }
     ],
     "2BR": [
@@ -560,6 +589,10 @@
       {
         "price": 2039,
         "date": "2026-03-25"
+      },
+      {
+        "price": 1719,
+        "date": "2026-04-03"
       }
     ],
     "Studio": [
@@ -1087,6 +1120,10 @@
       {
         "price": 2200,
         "date": "2026-03-25"
+      },
+      {
+        "price": 2350,
+        "date": "2026-04-03"
       }
     ],
     "Studio": [
@@ -1333,6 +1370,11 @@
       {
         "price": 1800,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1775,
+        "date": "2026-04-03",
+        "note": "Lower end of $1,775-$2,210 range per grotonestates.com — 10 units available (April 2026)"
       }
     ],
     "Studio": [

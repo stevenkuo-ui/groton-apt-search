@@ -695,6 +695,16 @@
       {
         "price": 2270,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1670,
+        "date": "2026-04-01",
+        "note": "CORRECTION: Realtor.com/Apartments.com confirmed actual price ~$1,670/mo; $2,270 was erroneous"
+      },
+      {
+        "price": 1750,
+        "date": "2026-04-03",
+        "note": "↑$80 from $1,670 — Phase I 2BR/1,025sqft increased to $1,750/mo per Apartments.com April 3, 2026"
       }
     ],
     "Studio": [

@@ -1,0 +1,84 @@
+{
+  "triton-square": {
+    "studio": 2335,
+    "1br": 2585,
+    "2br": 3175,
+    "last_updated": "2026-04-04",
+    "notes": "Site accessible but pricing via JS iframe. Aggregator data (Apr 4): Studio from $2,335/mo, 1BR from $2,585-$2,634/mo per Apartments.com. Previous stored $1,930 for Studio/1BR was from earlier direct scrape — significant increase detected. 2BR unchanged at ~$3,175/mo."
+  },
+  "pleasant-valley": {
+    "Style 1 (Studio 623sqft)": {
+      "price": 1870,
+      "date": "2026-04-04",
+      "prev": 1870,
+      "note": "Confirmed stable at $1,870/mo via Playwright direct scrape (Apr 4). No change."
+    },
+    "Style 2 (1BR 831sqft)": {
+      "price": 2085,
+      "date": "2026-04-04",
+      "prev": 2085,
+      "note": "Confirmed stable at $2,085/mo via Playwright direct scrape (Apr 4). No change."
+    },
+    "Style 2A (1BR 945sqft)": {
+      "price": null,
+      "date": "2026-04-04",
+      "note": "Please Call for pricing. No change."
+    },
+    "last_updated": "2026-04-04",
+    "notes": "Direct G5 platform scrape confirms no change vs stored prices."
+  },
+  "harbor-heights-enclave": {
+    "1br": 2400,
+    "2br": 3500,
+    "3br": 4200,
+    "last_updated": "2026-04-04",
+    "notes": "Webflow page loads, prices JS-rendered. No new data. Previous stored remains: 1BR ~$2,400/mo, 2BR ~$3,500/mo, 3BR ~$4,200/mo."
+  },
+  "harbor-heights-beacon": {
+    "1br_low": 2320,
+    "1br_high": 2494,
+    "2br_low": 2988,
+    "2br_high": 3258,
+    "3br": 3995,
+    "last_updated": "2026-04-04",
+    "notes": "Webflow page loads, prices JS-rendered. Web search confirms 1BR from $2,320/mo (ApartmentList), 2BR from $2,988/mo (CorporateHousing). Previous stored $2,395-$2,494 for 1BR low end appears slightly lower at $2,320 — minor adjustment downward on floor. 2BR consistent."
+  },
+  "waterford-woods": {
+    "studio": 1654,
+    "1br": 1855,
+    "2br_low": 2320,
+    "2br_high": 2725,
+    "last_updated": "2026-04-04",
+    "notes": "Wix site still JS-inaccessible via headless. Aggregators (Apr 4): starting $1,654/mo, range $1,654-$2,725/mo per Trulia/Apartments.com. Previous stored $1,855 was average — now confirmed floor at $1,654. No significant change."
+  },
+  "groton-estates": {
+    "2br": 2210,
+    "2br_low": 1775,
+    "last_updated": "2026-04-04",
+    "notes": "grotonestates.com redirects to Rocky Hill CT location (Kelson Row). Original Groton location data unavailable via site. Stored prices from Apr 2 remain: 2BR $1,775-$2,210/mo."
+  },
+  "chester-place": {
+    "1br": 1845,
+    "last_updated": "2026-04-04",
+    "notes": "b7 direct site confirms $1,845/mo (Apr 4). No $500 special active. Previous stored $1,845 from Apr 2 — NO CHANGE."
+  },
+  "emerson-place": {
+    "1br": 1895,
+    "1br_corner": 1995,
+    "2br": 2345,
+    "last_updated": "2026-04-04",
+    "notes": "b7 direct site (Apr 4): 1BR $1,895/mo, 1BR Corner $1,995/mo, 2BR $2,345/mo. Previous stored from Apr 4: 1BR $1,895, Corner $1,995, 2BR $2,345 — NO CHANGE."
+  },
+  "the-ledges": {
+    "studio": 1695,
+    "1br": 2075,
+    "2br": 2797,
+    "last_updated": "2026-04-04",
+    "notes": "theledgesapartments.com timeout (Cloudflare blocking). ApartmentList confirms 1BR starting $2,075/mo (Apr 4). Previous stored: 1BR $2,052-$2,075. Price FLOOR increased from $2,052 to $2,075 (↑$23). No special active."
+  },
+  "gull-harbor": {
+    "1br": 1695,
+    "last_updated": "2026-04-04",
+    "notes": "gullharborct.com/floorplans returns 404 (Apr 4). Homepage still live. Aggregators confirm 1BR at $1,695/mo (Apartments.com, Trulia). Previous stored $1,695 — NO CHANGE."
+  }
+}

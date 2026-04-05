@@ -1,0 +1,12 @@
+{"properties": [
+  {"name": "Triton Square", "status": "changed", "details": "Pricing increased significantly. Previous: Studio/1BR ~$1,930/mo. Current: Studio $2,335/mo, 1BR $2,585-$2,634/mo (↑$405-655). Site accessible but prices JS-rendered."},
+  {"name": "Pleasant Valley", "status": "no_change", "details": "G5 platform confirms prices unchanged. Studio $1,870/mo, 1BR $2,085/mo. No special active."},
+  {"name": "Harbor Heights (Enclave)", "status": "no_change", "details": "Webflow page loads, prices JS-rendered. No new data. Stored: 1BR ~$2,400/mo, 2BR ~$3,500/mo."},
+  {"name": "Harbor Heights (Beacon)", "status": "changed", "details": "Minor adjustment at price floor. Previous 1BR min $2,395, now $2,320/mo per ApartmentList (↓$75). Range $2,320-$2,494/mo. 2BR unchanged."},
+  {"name": "Waterford Woods", "status": "no_change", "details": "Wix site still JS-inaccessible. Aggregators confirm $1,654-$2,725/mo range. Previous stored $1,855 average - no significant change."},
+  {"name": "Groton Estates", "status": "offline", "details": "grotonestates.com now redirects to Rocky Hill CT (Kelson Row). Groton location data unavailable. Stored prices from prior run remain: 2BR $1,775-$2,210/mo."},
+  {"name": "Chester Place", "status": "no_change", "details": "b7 site confirms $1,845/mo. No $500 special active. Same as stored."},
+  {"name": "Emerson Place", "status": "no_change", "details": "b7 site confirms 1BR $1,895/mo, Corner $1,995/mo, 2BR $2,345/mo. Same as stored."},
+  {"name": "The Ledges", "status": "changed", "details": "Site timeout (Cloudflare). ApartmentList confirms 1BR floor increased from $2,052 to $2,075/mo (↑$23). No special active."},
+  {"name": "Gull Harbor", "status": "offline", "details": "gullharborct.com/floorplans returns 404. Homepage still live. Aggregators confirm 1BR $1,695/mo - price unchanged but floorplans URL broken."}
+]}

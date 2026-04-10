@@ -59,9 +59,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- NEWS -->
 <div class="news-card">
-<h2>📉 Pleasant Valley pricing CONFIRMED LOWER via official site — April 5, 2026</h2>
-<p class="news-date">April 5, 2026</p>
-<p class="news-body">Official G5 platform (pleasantvalley-apts.com) confirms lower prices than previously reported: Studio (Style 1, 623sqft) $1,870/mo, 1BR (Style 2, 831sqft) $2,085/mo. Style 2A (945sqft) Please Call. Third-party data showing 1BR $2,300–$2,380 was inaccurate — the official site does not reflect those prices. Contact (860) 910-4716.</p>
+<h2>📈 Pleasant Valley 1BR increased to $2,300/mo — April 9, 2026</h2>
+<p class="news-date">April 9, 2026</p>
+<p class="news-body">1BR (Style 2, 831sqft) now confirmed at $2,300/mo per ApartmentFinder (April 9, 2026) — a $215 increase from the $2,085 stored in April 5 G5 scrape. Previous news card claiming $2,300–$2,380 was inaccurate has been corrected. Studio stable at $1,870/mo. Total monthly price includes ~$215/mo amenity fee. Contact (860) 910-4716.</p>
 </div>
 
 <!-- PRICE TRENDS -->
@@ -97,16 +97,16 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>1BR</td>
 <td>$2,085/mo</td>
-<td class="pt-current">$2,085/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
-<td>—</td>
-<td><span style="color:#2563eb">&#8594; Stable</span></td>
+<td class="pt-current">$2,300/mo <span class="pt-up">↑ +$215</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$215</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span>
 </tr>
 <tr>
 <td>2BR</td>
 <td>$2,395/mo</td>
-<td class="pt-current">Contact property — not visible in default filter <span style="color:#667085;font-size:12px;margin-left:4px">●</span></td>
+<td class="pt-current">$2,580–$2,850/mo <span style="color:#667085;font-size:12px;margin-left:4px">●</span></td>
 <td>—</td>
-<td><span style="color:#667085">&#8594; Confirm with property</span></td>
+<td><span style="color:#667085">&#8594; Range</span></td>
 </tr>
 </tbody>
 </table>
@@ -126,7 +126,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- DETAILS -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing (confirmed via official G5 platform, April 5, 2026):</strong> Studio (Style 1, 623sqft) from $1,870/mo. 1BR (Style 2, 831sqft) from $2,085/mo. 1BR Style 2A (945sqft) Please Call. Total monthly price includes $215/mo amenity fee (high-speed internet, cable, valet trash). 2BR not visible in default filter — confirm availability with property at (860) 910-4716.</p>
+<p><strong>Pricing (confirmed via ApartmentFinder, April 9, 2026):</strong> Studio (Style 1, 623sqft) from $1,870/mo. 1BR (Style 2, 831sqft) from $2,300/mo. 1BR Style 2A (945sqft) Please Call. Total monthly price includes ~$215/mo amenity fee (high-speed internet, cable, valet trash). 2BR confirmed at $2,580–$2,850/mo per ApartmentFinder. Contact (860) 910-4716.</p>
 <p><strong>Availability (per ForRentUniversity, April 2026):</strong></p>
 <div class="figure-grid">
 <div class="figure-card">
@@ -135,7 +135,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </div>
 <div class="figure-card">
 <div class="figure-title">Style 2 — 1BR/1BA · 831 sqft</div>
-<div class="figure-note"><strong>$2,085/mo</strong> · 2 units available NOW</div>
+<div class="figure-note"><strong>$2,300/mo</strong> <span class="price-up">↑</span> · 2 units available NOW</div>
 </div>
 <div class="figure-card">
 <div class="figure-title">Style 2A — 1BR/1BA · 945 sqft</div>
@@ -236,7 +236,7 @@ new Chart(document.getElementById('price-trend-chart'), {
                   1750,
                   1780,
                   2085,
-                  2085
+                  2300
             ],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",
@@ -252,7 +252,7 @@ new Chart(document.getElementById('price-trend-chart'), {
                   2295,
                   2295,
                   2395,
-                  2395
+                  2580
             ],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",

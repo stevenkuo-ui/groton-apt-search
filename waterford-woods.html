@@ -62,9 +62,9 @@ th{background:#f7f9fc;font-weight:600}
 
 <!-- NEWS -->
 <div class="news-card">
-<h2>📈 1BR increased to $1,875/mo — April 3, 2026</h2>
-<p class="news-date">April 3, 2026</p>
-<p class="news-body">1BR Market Rate increased from $1,795/mo to $1,875/mo per HotPads verified listing (1BR/1BA, 675 sqft, available 4/10/2026). This partially reverses the March decline from $2,025 to $1,795. Oak Grove ($2,320/mo, avail 5/21) and Great Neck ($2,350/mo, avail 5/18) still coming online May 2026.</p>
+<h2>📈 1BR increased $60 to $1,855/mo — April 9, 2026</h2>
+<p class="news-date">April 9, 2026</p>
+<p class="news-body">1BR/1BA confirmed at $1,855/mo per Trulia and Realtor.com (April 9, 2026) — a $60 increase from $1,795/mo. Previous price direction: March 26 $1,875 → March 28 $1,795 → April 9 $1,855. Oak Grove ($2,320/mo, avail 5/21) and Great Neck ($2,350/mo, avail 5/18) still coming online May 2026. Contact (860) 772-2253.</p>
 </div>
 
 <div class="news-card">
@@ -112,9 +112,9 @@ th{background:#f7f9fc;font-weight:600}
 <tr>
 <td>1BR</td>
 <td>$2,025/mo</td>
-<td class="pt-current">$1,795/mo <span class="pt-down">↓ -$230</span></td>
-<td><span style="color:#16a34a;font-weight:700">&#8595; -$230</span></td>
-<td><span style="color:#16a34a;font-weight:700">&#8595; Decreasing</span></td>
+<td class="pt-current">$1,855/mo <span class="pt-up">↑ +$60</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$60</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>2BR</td>
@@ -282,7 +282,7 @@ th{background:#f7f9fc;font-weight:600}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026'],
     datasets: [
       {
             "label": "Studio",
@@ -304,7 +304,8 @@ new Chart(document.getElementById('price-trend-chart'), {
             "data": [
                   1875,
                   1875,
-                  1795
+                  1795,
+                  1855
             ],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",

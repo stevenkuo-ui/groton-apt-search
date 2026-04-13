@@ -1,0 +1,42 @@
+
+=== Eagle Pointe (direct) === FAILED: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.eaglepointeapts.com/floorplans", waiting until "networkidle"
+
+
+=== Courtview Square (direct) === FAILED: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.courtviewct.com/", waiting until "networkidle"
+
+
+=== ReNew Groton (direct) === FAILED: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.renewgroton.com/groton/renew-groton/conventional/", waiting until "networkidle"
+
+
+=== ReNew Washington Park (direct) === FAILED: page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.renewwashingtonpark.com/groton/renew-washington-park/conventional/", waiting until "networkidle"
+
+
+=== Eagle Pointe (Apartments.com) ===
+URL: https://www.apartments.com/eagle-pointe-new-london-ct/qg2gmsx/
+Content length: 331
+Access Denied
+You don't have permission to access "http://www.apartments.com/eagle-pointe-new-london-ct/qg2gmsx/" on this server.
+
+Reference #18.922d3e17.1776042363.81d2c077
+
+https://errors.edgesuite.net/18.922d3e17.1776042363.81d2c077
+
+=== Courtview Square (Apartments.com) ===
+URL: https://www.apartments.com/courtview-square-apartments-new-london-ct/gpepnvw/
+Content length: 346
+Access Denied
+You don't have permission to access "http://www.apartments.com/courtview-square-apartments-new-london-ct/gpepnvw/" on this server.
+
+Reference #18.892d3e17.1776042366.843362c5
+
+https://errors.edgesuite.net/18.892d3e17.1776042366.843362c5
+
+=== SCRAPING COMPLETE ===

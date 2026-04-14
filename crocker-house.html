@@ -61,6 +61,12 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </div>
 
 <div class="news-card">
+<h2>📰 Prices updated per Realtor.com — April 14, 2026</h2>
+<p class="news-date">April 14, 2026</p>
+<p class="news-body">Per Realtor.com (April 14): 2BR increased to $1,750/mo (↑ from $1,700). Studio $1,100, 1BR $1,400, 1BR/2BA $1,700, 2BR $1,750. Availability: Studio, 1BR, and 2BR confirmed active. Contact (860) 348-5616 to confirm.</p>
+</div>
+
+<div class="news-card">
 <h2>📰 Prices updated per Rentable.co — March 28, 2026</h2>
 <p class="news-date">March 28, 2026</p>
 <p class="news-body">Per Rentable.co (March 28): Studio $1,100/mo (↓ from $1,120), 1BR $1,350/mo (↓ from $1,400), 2BR $1,700–$1,750/mo (↓ from $1,950). Availability: Studio 4 units, 1BR 3 units, 2BR 2 units. Confirm current inventory directly at (860) 348-5616.</p>
@@ -114,9 +120,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>2BR</td>
 <td>$1,925/mo</td>
-<td class="pt-current">$1,700/mo <span class="pt-down">&#8595; &#8722;$250</span></td>
-<td><span style="color:#16a34a;font-weight:700">&#8595; &#8722;$250</span></td>
-<td><span style="color:#16a34a;font-weight:700">&#8595; Decreasing</span></td>
+<td class="pt-current">$1,750/mo <span class="pt-up">&#8593; +$50</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$50 (Apr 2026)</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 </tbody>
 </table>
@@ -135,7 +141,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- DETAILS -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing:</strong> Studio $1,100/mo · 1BR $1,350/mo · 2BR $1,700–$1,750/mo (per Rentable.co, March 28 2026). Historic building — broad unit variance; confirm directly.</p>
+<p><strong>Pricing:</strong> Studio $1,100/mo · 1BR $1,400/mo · 1BR/2BA $1,700/mo · 2BR $1,750/mo (per Realtor.com, April 14 2026). Historic building — broad unit variance; confirm directly.</p>
 <p><strong>Availability:</strong> 1BR showed as contact for availability rather than a strong live count.</p>
 <p><strong>Floor plans:</strong> 1BR/1BA — roughly 500–1,100 sqft range surfaced. No public floor plan image found. Historic building with broad unit variance; no official website or floor plan image is publicly exposed. Realtor.com does not surface a unit-level floor plan diagram.</p>
 </div>
@@ -187,7 +193,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026'],
     datasets: [
       {
             "label": "Studio",
@@ -224,7 +230,8 @@ new Chart(document.getElementById('price-trend-chart'), {
             "data": [
                   1895,
                   1925,
-                  1950
+                  1700,
+                  1750
             ],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",

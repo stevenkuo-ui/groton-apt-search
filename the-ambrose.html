@@ -56,13 +56,19 @@ th{background:#f7f9fc;font-weight:600}
 <div class="hero">
 <div style="color:rgba(255,255,255,.7);font-size:13px">Groton</div>
 <h1>The Ambrose</h1>
-<p>Fully renovated pet-friendly community at 12 Kamaha Street — 1BR $1,945/mo, 2BR $2,245/mo, with $99/month community fee covering heat, hot water, gas, water/sewer, trash, renters insurance &amp; credit building.</p>
+<p>Fully renovated pet-friendly community at 12 Kamaha Street — 1BR $1,995/mo, 2BR $2,345/mo, with $99/month community fee covering heat, hot water, gas, water/sewer, trash, renters insurance &amp; credit building.</p>
 <div><span class="mini">Heat included</span><span class="mini">Hot water included</span><span class="mini">Pet-friendly</span><span class="mini">Washer/dryer</span><span class="mini">No security deposit</span><span class="mini">5 min to Sub Base</span></div>
 </div>
 </div>
 
 
 <!-- NEWS -->
+<div class="news-card">
+<h2>📰 1BR increased $50 to $1,995/mo, 2BR increased $100 to $2,345/mo — April 16, 2026</h2>
+<p class="news-date">April 16, 2026</p>
+<p class="news-body">Playwright live scrape of b7properties.com/ambrose (April 16): 1BR/1BA 724sqft increased from $1,945 to $1,995/mo (↑$50). 2BR/1BA 830sqft increased from $2,245 to $2,345/mo (↑$100). $99 community fee unchanged. First price change since April 12.</p>
+</div>
+
 <div class="news-card">
 <h2>📰 Direct site now accessible; 1BR confirmed at $1,945/mo — April 12, 2026</h2>
 <p class="news-date">April 12, 2026</p>
@@ -140,15 +146,15 @@ th{background:#f7f9fc;font-weight:600}
 <tr>
 <td>1BR</td>
 <td>$1,875/mo</td>
-<td class="pt-current">$1,945/mo</td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$50 (Apr 3)</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing (Mar)</span></td>
+<td class="pt-current">$1,995/mo <span class="pt-up">&#8593;</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$50 (Apr 16)</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>2BR</td>
 <td>$2,195/mo</td>
-<td class="pt-current">$2,245/mo <span class="pt-up">&#8593;</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$50</span></td>
+<td class="pt-current">$2,345/mo <span class="pt-up">&#8593;</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$100</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 </tbody>
@@ -177,12 +183,12 @@ th{background:#f7f9fc;font-weight:600}
 <tr>
 <td>1-Bedroom, 1-Bath</td>
 <td>724 sqft</td>
-<td><strong>$1,945/month</strong></td>
+<td><strong>$1,995/month</strong><span class="price-up">↑</span></td>
 </tr>
 <tr>
 <td>2-Bedroom, 1-Bath</td>
 <td>830 sqft</td>
-<td><strong>$2,245/month</strong></td>
+<td><strong>$2,345/month</strong><span class="price-up">↑</span></td>
 </tr>
 </tbody>
 </table>
@@ -265,7 +271,7 @@ th{background:#f7f9fc;font-weight:600}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026'],
     datasets: [
       {
             "label": "Studio",
@@ -287,7 +293,8 @@ new Chart(document.getElementById('price-trend-chart'), {
             "data": [
                   1865,
                   1875,
-                  1945
+                  1945,
+                  1995
             ],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",
@@ -302,7 +309,8 @@ new Chart(document.getElementById('price-trend-chart'), {
             "data": [
                   2195,
                   2195,
-                  2245
+                  2245,
+                  2345
             ],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",

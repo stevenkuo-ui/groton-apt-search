@@ -1,0 +1,54 @@
+{
+  "gull-harbor-home": {
+    "status": 403,
+    "title": "Just a moment...",
+    "priceLines": []
+  },
+  "the-ledges-al": {
+    "status": 404,
+    "title": "",
+    "priceLines": []
+  },
+  "triton-square-hotpads": {
+    "status": 403,
+    "title": "Access to this page has been denied",
+    "priceLines": []
+  },
+  "harbor-heights-al": {
+    "status": 200,
+    "title": "Harbor Heights Mystic - Mystic, CT apartments for rent",
+    "priceLines": [
+      "$2,045 - $3,478 per month",
+      "Harbor Heights Mystic apartments start at $2,045/month. There are 15 available apartments priced from $2,045 to $3,478. Prices were last verified by Harbor Heights Mystic 1 hour ago.",
+      "$2,045",
+      "$2,045",
+      "$2,053",
+      "$2,132",
+      "$2,711",
+      "$2,721",
+      "$3,066",
+      "$75 per applicant",
+      "$1,000",
+      "$250 Admin Fee",
+      "$20 trash valet",
+      "We are a pet friendly community! Per pet, there is a $275 nonrefundable for cats and $375 nonrefundable pet fee for dogs. Monthly pet rent is $40 per cat and $55 per dog. Please contact the office for breed and weight restrictions.",
+      "Surface lot, unassigned. One surface space per licensed resident. Garages are available for an additional monthly fee. There will also be garages available with capabilities to charge electric vehicles. Call for more information. Garages: $150 per month Tesla Charging: $175 per month."
+    ]
+  },
+  "groton-estates": {
+    "status": 200,
+    "title": "1 or 2 Bedroom Apartments in Rocky Hill, CT | Kelson Row",
+    "priceLines": [
+      "$1,775.00 - $2,210.00 /mo *",
+      "$1,775.00 - $2,210.00 Base Rent"
+    ],
+    "availLines": [
+      "12 UNITS AVAILABLE"
+    ]
+  },
+  "waterford-woods": {
+    "status": 200,
+    "title": "AVAILABILITY | WaterFord Woods",
+    "priceLines": []
+  }
+}

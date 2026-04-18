@@ -111,7 +111,7 @@
       {
         "price": 1895,
         "date": "2026-04-03",
-        "note": "↑$20 from $1,875 — 1BR confirmed at $1,895/mo; 1BR Corner at $1,995/mo per b7properties.com April 2026"
+        "note": "\u2191$20 from $1,875 \u2014 1BR confirmed at $1,895/mo; 1BR Corner at $1,995/mo per b7properties.com April 2026"
       }
     ],
     "2BR": [
@@ -130,7 +130,7 @@
       {
         "price": 2345,
         "date": "2026-04-03",
-        "note": "↑$50 from $2,495 per b7properties.com April 2026 — 2BR at $2,345/mo confirmed"
+        "note": "\u2191$50 from $2,495 per b7properties.com April 2026 \u2014 2BR at $2,345/mo confirmed"
       }
     ],
     "Studio": [
@@ -151,46 +151,47 @@
   "groton-towers": {
     "Studio (New Haven)": {
       "price": 1600,
-      "date": "2026-04-10",
+      "date": "2026-04-17",
       "range": "$1,600-$1,775",
-      "available": 5,
-      "prev": 1602,
-      "note": "Live Playwright (April 10): Low decreased $2 from $1,602 to $1,600."
+      "available": 6,
+      "prev": 1600,
+      "note": "Live Playwright (April 17): Stable at $1,600-$1,775/mo with 6 available."
     },
     "1BR (Fairfield)": {
-      "price": 1825,
-      "date": "2026-04-10",
-      "range": "$1,825-$1,890",
-      "available": 4,
-      "prev": 1825,
-      "note": "Live Playwright (April 10): Price stable. Availability decreased from 5 to 4."
+      "price": 1895,
+      "date": "2026-04-17",
+      "range": "$1,895",
+      "available": 1,
+      "prev": 1895,
+      "note": "Live Playwright (April 17): Price now shows flat $1,895/mo and availability dropped from 2 to 1."
     },
     "1BR (Stonington)": {
       "price": null,
-      "date": "2026-04-10",
-      "note": "Call for details per Playwright (April 10, 2026)."
+      "date": "2026-04-17",
+      "note": "Call for details per Playwright (April 17, 2026)."
     },
     "1BR (Mystic)": {
       "price": null,
-      "date": "2026-04-10",
-      "note": "Call for details per Playwright (April 10, 2026)."
+      "date": "2026-04-17",
+      "note": "Call for details per Playwright (April 17, 2026)."
     },
     "2BR (Providence)": {
       "price": 2262,
-      "date": "2026-04-10",
+      "date": "2026-04-17",
       "range": "$2,262-$2,322",
-      "available": 3,
-      "prev": 2322,
-      "note": "Live Playwright (April 10): Floor dropped from $2,322 flat to $2,262-$2,322 range (↓$60). Availability increased from 2 to 3."
+      "available": 2,
+      "prev": 2262,
+      "note": "Live Playwright (April 17): Stable range at $2,262-$2,322/mo, with availability down from 3 to 2."
     },
     "2BR (Boston)": {
-      "price": 2059,
-      "date": "2026-04-10",
-      "range": "$2,059-$2,099",
+      "price": 2058,
+      "date": "2026-04-17",
+      "range": "$2,058-$2,059",
       "available": 2,
-      "note": "Live Playwright (April 10): Stable."
+      "prev": 2058,
+      "note": "Live Playwright (April 17): Range restored to $2,058-$2,059/mo with 2 available."
     },
-    "site_status": "ONLINE - confirmed accessible via Playwright (April 10)"
+    "site_status": "ONLINE - confirmed accessible via Playwright (April 17)"
   },
   "groton-townhomes": {
     "city": "Groton",
@@ -246,8 +247,8 @@
         "date": "2026-03-23"
       }
     ],
-    "last_updated": "2026-04-10",
-    "site_status": "ERROR - direct site unreachable"
+    "last_updated": "2026-04-17",
+    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 17)"
   },
   "harbor-heights": {
     "city": "Mystic",
@@ -267,7 +268,7 @@
       {
         "price": 2547,
         "date": "2026-03-26",
-        "note": "Beacon 1BR Broad Reach confirmed at $2,547/mo — up $128 from $2,419 per Zillow verified listing"
+        "note": "Beacon 1BR Broad Reach confirmed at $2,547/mo \u2014 up $128 from $2,419 per Zillow verified listing"
       }
     ],
     "2BR": [
@@ -317,7 +318,7 @@
       {
         "price": 2085,
         "date": "2026-04-03",
-        "note": "↑$280 from $1,805 — 2 apartments available per official site, April 2026"
+        "note": "\u2191$280 from $1,805 \u2014 2 apartments available per official site, April 2026"
       }
     ],
     "2BR": [
@@ -336,7 +337,7 @@
       {
         "price": 2395,
         "date": "2026-04-03",
-        "note": "↑$45 from $2,350 — per official site, April 2026"
+        "note": "\u2191$45 from $2,350 \u2014 per official site, April 2026"
       }
     ],
     "Studio": [
@@ -355,7 +356,7 @@
       {
         "price": 1870,
         "date": "2026-04-03",
-        "note": "↑$420 from $1,450 — 3 apartments available per official site, April 2026"
+        "note": "\u2191$420 from $1,450 \u2014 3 apartments available per official site, April 2026"
       }
     ]
   },
@@ -492,7 +493,9 @@
         "price": 1225,
         "date": "2026-03-23"
       }
-    ]
+    ],
+    "last_updated": "2026-04-17",
+    "site_status": "ONLINE - direct site confirmed accessible via Playwright but pricing still unpublished (April 17)"
   },
   "meadow-ridge": {
     "city": "Norwich",
@@ -538,8 +541,8 @@
         "date": "2026-03-23"
       }
     ],
-    "last_updated": "2026-04-10",
-    "site_status": "ERROR - floor plans 404"
+    "last_updated": "2026-04-17",
+    "site_status": "ONLINE - meadowridgenorwich.com/floorplans confirmed accessible via Playwright (April 17)"
   },
   "renew-groton": {
     "city": "Groton",
@@ -567,7 +570,12 @@
       {
         "price": 1799,
         "date": "2026-04-05",
-        "note": "↑$90 from $1,709 — per Apartments.com/HotPads April 5, 2026"
+        "note": "\u2191$90 from $1,709 \u2014 per Apartments.com/HotPads April 5, 2026"
+      },
+      {
+        "price": 1709,
+        "date": "2026-04-17",
+        "note": "Apartments.com April 17 shows ReNew Groton from $1,709/mo; Zillow shows 2 units available."
       }
     ],
     "2BR": [
@@ -625,6 +633,11 @@
       {
         "price": 1799,
         "date": "2026-03-25"
+      },
+      {
+        "price": 1659,
+        "date": "2026-04-17",
+        "note": "Apartments.com April 17 shows live 1BR units from about $1,659/mo."
       }
     ],
     "2BR": [
@@ -643,6 +656,11 @@
       {
         "price": 2379,
         "date": "2026-03-25"
+      },
+      {
+        "price": 2369,
+        "date": "2026-04-17",
+        "note": "HotPads April 17 shows overall range up to about $2,369/mo."
       }
     ],
     "Studio": [
@@ -661,6 +679,11 @@
       {
         "price": 1499,
         "date": "2026-03-25"
+      },
+      {
+        "price": 1539,
+        "date": "2026-04-17",
+        "note": "HotPads/ForRentUniversity April 17 show studios from $1,539/mo."
       }
     ]
   },
@@ -701,7 +724,7 @@
       {
         "price": 1750,
         "date": "2026-04-03",
-        "note": "↑$80 from $1,670 — Phase I 2BR/1,025sqft increased to $1,750/mo per Apartments.com April 3, 2026"
+        "note": "\u2191$80 from $1,670 \u2014 Phase I 2BR/1,025sqft increased to $1,750/mo per Apartments.com April 3, 2026"
       }
     ],
     "Studio": [
@@ -721,17 +744,18 @@
   },
   "the-ambrose": {
     "1BR/1BA 724sqft": {
-      "price": 2195,
-      "date": "2026-04-10",
-      "prev": 1945,
-      "note": "Aggregators (ApartmentFinder, Highrises, Realtor.com) show 1BR INCREASED from $1,945 to $2,195/mo (↑$250, April 10, 2026). Direct site down — ERR_NAME_NOT_RESOLVED."
+      "price": 1995,
+      "date": "2026-04-17",
+      "prev": 1995,
+      "note": "Direct site (Playwright, April 17) still shows 1BR at $1,995/mo. Aggregator references above $2,300 appear stale or mismatched."
     },
     "2BR/1BA 830sqft": {
-      "price": 2245,
-      "date": "2026-04-10",
-      "note": "Stable at $2,245/mo per aggregators (April 10, 2026)."
+      "price": 2345,
+      "date": "2026-04-17",
+      "prev": 2345,
+      "note": "Direct site (Playwright, April 17) still shows 2BR at $2,345/mo."
     },
-    "site_status": "ERROR - ERR_NAME_NOT_RESOLVED on theambroseapts.com and b7properties.com/ambrose (April 10)"
+    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 17)"
   },
   "hedgewood": {
     "1BR": {
@@ -747,7 +771,7 @@
       "date": "2026-04-04",
       "available": "3 units",
       "source": "Zillow (April 4, 2026)",
-      "note": "Zillow shows 2BR from $1,325/mo (3 units avail). Stored $1,300/mo was floor price; Zillow now shows $1,325 as starting — possibly unit-specific."
+      "note": "Zillow shows 2BR from $1,325/mo (3 units avail). Stored $1,300/mo was floor price; Zillow now shows $1,325 as starting \u2014 possibly unit-specific."
     },
     "3BR": {
       "price": 1425,
@@ -755,8 +779,8 @@
       "source": "Zillow (April 4, 2026)",
       "note": "Stable at $1,425/mo per Zillow (April 4)."
     },
-    "last_updated": "2026-04-10",
-    "note": "miradorliving.com is a senior living platform — NOT the same as Hedgewood apartments at 70 Sandy Ln. Original property still accessible via aggregators. Prices confirmed stable vs April 4."
+    "last_updated": "2026-04-17",
+    "note": "Aggregator-only listing. DuckDuckGo results on April 17 still surface Zillow as active with 3 units available; miradorliving.com remains a senior living platform, not a dedicated property site."
   },
   "blackstone-apartments": {
     "city": "Norwich",
@@ -820,12 +844,12 @@
     "1BR Standard": {
       "price": 1325,
       "date": "2026-03-26",
-      "note": "Standard 1BR at $1,325/mo — new distinction from Large 1BR ($1,495) per ApartmentFinder.com March 2026"
+      "note": "Standard 1BR at $1,325/mo \u2014 new distinction from Large 1BR ($1,495) per ApartmentFinder.com March 2026"
     },
     "Large 1BR": {
       "price": 1495,
       "date": "2026-03-26",
-      "note": "NEW unit type — Large 1BR at $1,495/mo per ApartmentFinder.com March 2026"
+      "note": "NEW unit type \u2014 Large 1BR at $1,495/mo per ApartmentFinder.com March 2026"
     }
   },
   "courtview-square": {
@@ -913,6 +937,11 @@
       {
         "price": 1950,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1700,
+        "date": "2026-04-17",
+        "note": "Apartments.com April 17 shows Crocker House range topping at $1,700/mo."
       }
     ],
     "Studio": [
@@ -994,6 +1023,11 @@
       {
         "price": 1560,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1560,
+        "date": "2026-04-17",
+        "note": "Direct site snippet April 17 shows Eagle Pointe starting at $1,560/mo."
       }
     ],
     "2BR": [
@@ -1162,6 +1196,11 @@
       {
         "price": 1400,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1400,
+        "date": "2026-04-17",
+        "note": "Brokerage mirror listings still show 30 Nichols Ln active at $1,400/mo."
       }
     ],
     "2BR": [
@@ -1315,7 +1354,7 @@
       {
         "price": 1775,
         "date": "2026-04-03",
-        "note": "Lower end of $1,775-$2,210 range per grotonestates.com — 10 units available (April 2026)"
+        "note": "Lower end of $1,775-$2,210 range per grotonestates.com \u2014 10 units available (April 2026)"
       }
     ],
     "Studio": [

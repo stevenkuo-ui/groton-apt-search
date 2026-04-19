@@ -576,6 +576,11 @@
         "price": 1709,
         "date": "2026-04-17",
         "note": "Apartments.com April 17 shows ReNew Groton from $1,709/mo; Zillow shows 2 units available."
+      },
+      {
+        "price": 1769,
+        "date": "2026-04-19",
+        "note": "\u2191$60 from $1,709 \u2014 1BR floor increased to $1,769/mo per Trulia showing 7 units starting at $1,769 (April 19, 2026)."
       }
     ],
     "2BR": [
@@ -923,6 +928,11 @@
       {
         "price": 1450,
         "date": "2026-03-23"
+      },
+      {
+        "price": 1400,
+        "date": "2026-04-19",
+        "note": "\u2193$50 from $1,450 \u2014 1BR decreased to $1,400/mo per news cards (March 25); current confirmed at $1,400/mo per Zillow/Apartments.com April 18."
       }
     ],
     "2BR": [
@@ -1099,6 +1109,11 @@
       {
         "price": 2350,
         "date": "2026-04-03"
+      },
+      {
+        "price": 2200,
+        "date": "2026-04-19",
+        "note": "\u2193$150 from $2,350 \u2014 2BR decreased to $2,200/mo per Realtor.com April 19 showing units from $2,200/mo (4 units available)."
       }
     ],
     "Studio": [

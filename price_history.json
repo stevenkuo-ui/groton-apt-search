@@ -131,6 +131,11 @@
         "price": 2345,
         "date": "2026-04-03",
         "note": "\u2191$50 from $2,495 per b7properties.com April 2026 \u2014 2BR at $2,345/mo confirmed"
+      },
+      {
+        "price": 2445,
+        "date": "2026-04-16",
+        "note": "\u2191$100 from $2,345 \u2014 2BR/1BA (925sqft) at $2,445/mo per b7properties.com April 16, 2026"
       }
     ],
     "Studio": [
@@ -191,7 +196,7 @@
       "prev": 2058,
       "note": "Live Playwright (April 17): Range restored to $2,058-$2,059/mo with 2 available."
     },
-    "site_status": "ONLINE - confirmed accessible via Playwright (April 17)"
+    "site_status": "ONLINE - confirmed accessible via Playwright (April 19)"
   },
   "groton-townhomes": {
     "city": "Groton",
@@ -247,8 +252,8 @@
         "date": "2026-03-23"
       }
     ],
-    "last_updated": "2026-04-17",
-    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 17)"
+    "last_updated": "2026-04-19",
+    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 19)"
   },
   "harbor-heights": {
     "city": "Mystic",
@@ -319,6 +324,11 @@
         "price": 2085,
         "date": "2026-04-03",
         "note": "\u2191$280 from $1,805 \u2014 2 apartments available per official site, April 2026"
+      },
+      {
+        "price": 2135,
+        "date": "2026-04-10",
+        "note": "\u2191$50 from $2,085 \u2014 per direct site scrape, April 10, 2026; 2 units available"
       }
     ],
     "2BR": [
@@ -338,6 +348,11 @@
         "price": 2395,
         "date": "2026-04-03",
         "note": "\u2191$45 from $2,350 \u2014 per official site, April 2026"
+      },
+      {
+        "price": 2445,
+        "date": "2026-04-10",
+        "note": "\u2191$50 from $2,395 \u2014 per direct site scrape, April 10, 2026; 1 unit available"
       }
     ],
     "Studio": [
@@ -357,6 +372,11 @@
         "price": 1870,
         "date": "2026-04-03",
         "note": "\u2191$420 from $1,450 \u2014 3 apartments available per official site, April 2026"
+      },
+      {
+        "price": 1920,
+        "date": "2026-04-10",
+        "note": "\u2191$50 from $1,870 \u2014 per direct site scrape, April 10, 2026; 3 units available"
       }
     ]
   },
@@ -374,6 +394,11 @@
       {
         "price": 1930,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2517,
+        "date": "2026-04-19",
+        "note": "AGGRESSIVE INCREASE: Aggregator data (Apartments.com/Trulia) shows 1BR total monthly price $2,517-$2,652. Direct site iframe unavailable. Stored $1,930 was pre-opening rate. May represent total pricing shift or fee restructure. Confirm directly at (860) 222-5626."
       }
     ],
     "2BR": [
@@ -388,6 +413,11 @@
       {
         "price": 2680,
         "date": "2026-03-23"
+      },
+      {
+        "price": 2865,
+        "date": "2026-04-19",
+        "note": "AGGRESSIVE INCREASE: Trulia shows 2BR total $2,865-$3,460; Apartments.com shows 2BR from ~$2,865. Direct site iframe unavailable. Stored $2,680 was pre-opening rate. May represent total pricing shift or fee restructure."
       }
     ],
     "3BR": [
@@ -402,6 +432,13 @@
       {
         "price": 3275,
         "date": "2026-03-23"
+      }
+    ],
+    "Studio": [
+      {
+        "price": 2335,
+        "date": "2026-04-19",
+        "note": "AGGRESSIVE INCREASE: Apartments.com shows Studio S1 at $2,335-$2,395 total monthly. Direct site unavailable."
       }
     ]
   },
@@ -494,8 +531,8 @@
         "date": "2026-03-23"
       }
     ],
-    "last_updated": "2026-04-17",
-    "site_status": "ONLINE - direct site confirmed accessible via Playwright but pricing still unpublished (April 17)"
+    "last_updated": "2026-04-19",
+    "site_status": "ONLINE - pricing unpublished (Please Call) confirmed via Playwright (April 19)"
   },
   "meadow-ridge": {
     "city": "Norwich",
@@ -541,8 +578,8 @@
         "date": "2026-03-23"
       }
     ],
-    "last_updated": "2026-04-17",
-    "site_status": "ONLINE - meadowridgenorwich.com/floorplans confirmed accessible via Playwright (April 17)"
+    "last_updated": "2026-04-19",
+    "site_status": "ONLINE - meadowridgenorwich.com/floorplans confirmed accessible via Playwright (April 19)"
   },
   "renew-groton": {
     "city": "Groton",
@@ -750,17 +787,17 @@
   "the-ambrose": {
     "1BR/1BA 724sqft": {
       "price": 1995,
-      "date": "2026-04-17",
+      "date": "2026-04-19",
       "prev": 1995,
-      "note": "Direct site (Playwright, April 17) still shows 1BR at $1,995/mo. Aggregator references above $2,300 appear stale or mismatched."
+      "note": "Direct site (Playwright, April 19) confirmed at $1995/mo \u2014 unchanged."
     },
     "2BR/1BA 830sqft": {
       "price": 2345,
-      "date": "2026-04-17",
+      "date": "2026-04-19",
       "prev": 2345,
-      "note": "Direct site (Playwright, April 17) still shows 2BR at $2,345/mo."
+      "note": "Direct site (Playwright, April 19) confirmed at $2345/mo \u2014 unchanged."
     },
-    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 17)"
+    "site_status": "ONLINE - direct site confirmed accessible via Playwright (April 19)"
   },
   "hedgewood": {
     "1BR": {

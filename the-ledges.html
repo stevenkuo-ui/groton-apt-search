@@ -61,9 +61,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 </div>
 <!-- NEWS -->
 <div class="news-card">
-<h2>🔄 The Ledges relisted on ApartmentList with new pricing — April 18, 2026</h2>
-<p class="news-date">April 18, 2026</p>
-<p class="news-body">The Ledges is back on ApartmentList with significant changes: 1BR Simply Modern (700sqft) now $2,241/mo (↑ $19 from $2,222 Arnold), studio newly listed at $1,788/mo, 2BR floor plans now $2,157-$3,656/mo, 3BR floor plans now $2,622-$3,656/mo, 15 units available. Floor plan names updated: Arnold → Simply Modern. Direct site still Cloudflare-blocked. Phone: (860) 606-4151.</p>
+<h2>🔄 The Ledges relisted on ApartmentList — studio $1,519/mo, 17 units available — April 21, 2026</h2>
+<p class="news-date">April 21, 2026</p>
+<p class="news-body">The Ledges now showing 17 units available (up from 15) per ApartmentList (April 21, 2026). Studio floor dropped to $1,519/mo (↓ from $1,788 stored April 18). 1BR Simply Modern still $2,241/mo. 2BR from $2,550/mo per ApartmentHomeLiving. Direct site still Cloudflare-blocked. Phone: (860) 606-4151.</p>
 </div>
 
 <div class="news-card">
@@ -105,9 +105,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>Studio</td>
 <td>$1,695/mo</td>
-<td class="pt-current">$1,788/mo <span class="pt-new">NEW</span></td>
-<td><span style="color:#16a34a;font-weight:700">&#8593; +$93</span></td>
-<td><span style="color:#2563eb">&#8593; New listing</span></td>
+<td class="pt-current">$1,519/mo <span class="pt-down">↓ −$269</span></td>
+<td><span style="color:#16a34a;font-weight:700">&#8595; −$269</span></td>
+<td><span style="color:#16a34a;font-weight:700">&#8595; Decreasing</span></td>
 </tr>
 <tr>
 <td>1BR</td>
@@ -119,8 +119,8 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>2BR</td>
 <td>$2,695/mo</td>
-<td class="pt-current">$2,157/mo <span style="color:#dc2626;font-size:12px;margin-left:4px">● floor</span></td>
-<td><span style="color:#dc2626;font-weight:700">Range: $2,157–$3,656</span></td>
+<td class="pt-current">$2,550/mo <span style="color:#dc2626;font-size:12px;margin-left:4px">● floor</span></td>
+<td><span style="color:#dc2626;font-weight:700">$2,550–$5,396/mo</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; Multiple plans</span></td>
 </tr>
 </tbody>
@@ -139,8 +139,8 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <h2>Details</h2>
 <div class="figure-grid">
 <div class="figure-card">
-<div class="figure-title">Studio — Studio · 600 sqft <span class="price-new">NEW</span></div>
-<div class="figure-note">Studio · 600 sqft · <strong>From $1,788/mo</strong> · <strong>Available</strong></div>
+<div class="figure-title">Studio — Studio · 600 sqft</div>
+<div class="figure-note">Studio · 600 sqft · <strong>From $1,519/mo</strong> · <strong>17 units available</strong></div>
 </div>
 <div class="figure-card">
 <div class="figure-title">Simply Modern — 1BR · 700 sqft</div>
@@ -234,7 +234,7 @@ new Chart(document.getElementById('price-trend-chart'), {
     datasets: [
       {
         label: 'Studio',
-        data: [1595, 1695, 1695, 1788],
+        data: [1595, 1695, 1695, 1519],
         borderColor: '#7c3aed',
         backgroundColor: 'rgba(124,58,237,0.08)',
         fill: true,
@@ -256,7 +256,7 @@ new Chart(document.getElementById('price-trend-chart'), {
       },
       {
         label: '2BR',
-        data: [2695, 2695, 2797, 2157],
+        data: [2695, 2695, 2797, 2550],
         borderColor: '#0891b2',
         backgroundColor: 'rgba(8,145,178,0.08)',
         fill: true,

@@ -1,45 +1,23 @@
 {
-  "group": "B",
-  "run_date": "2026-04-19",
-  "changes": [
-    {
-      "property": "groton-townhomes",
-      "change": "url_redirect",
-      "detail": "grotontownhouses.com/floorplans still returns 404. Main site available at www.grotontownhouses.com/available-rentals. No static pricing changes detected vs April 18 confirmed: 1BR $1,875/mo, 2BR $2,050/mo. Both July 15, 2026 move-in."
-    },
-    {
-      "property": "groton-towers",
-      "change": "url_redirect",
-      "detail": "grotonapartmenthomes.com/floorplans/ redirects to www.grotonapartmenthomes.com/floorplans/. Site still JS-rendered via SecureCafe — prices not statically available. Last confirmed: Studio $1,600–$1,775 (6 avail), 1BR Fairfield $1,895 (1 avail), 2BR Boston $2,058 (1 avail), 2BR Providence $2,262–$2,322 (2 avail). 1 MONTH FREE on select Fairfield 1BRs still active."
-    },
-    {
-      "property": "reid-hughes",
-      "change": "no_change",
-      "detail": "Direct site RealPage JS-rendered — no static prices in raw HTML. Playwright required for actual pricing. Last confirmed: 'Please Call' on direct site per April 18. Aggregators show $1,450–$1,875/mo range."
-    },
-    {
-      "property": "la-triumphe",
-      "change": "no_change",
-      "detail": "Direct site still Cloudflare-blocked. Availability dropped to 0 units per Trulia (April 18). Last confirmed pricing: Phase I 1BR $1,620, Phase II 1BR $1,750–$1,825, Phase I 2BR $1,670, Phase I Townhouse 2BR $1,850, Phase II 2BR $2,010–$2,110, 3BR $2,470/mo. Confirm availability at (860) 449-9999."
-    },
-    {
-      "property": "meadow-ridge",
-      "change": "no_change",
-      "detail": "Site still JS-rendered (RentCafe platform). floorplans URL redirects. Last confirmed (April 18): 1BR $1,130–$1,190/mo, 2BR $1,285–$1,395/mo. Prices match stored data."
-    },
-    {
-      "property": "hedgewood",
-      "change": "no_change",
-      "detail": "No dedicated property site. miradorliving.com is generic senior living portal. Last confirmed (April 18): 1BR $1,025/mo, 2BR $1,325/mo. Prices stable per aggregators."
-    },
-    {
-      "property": "the-ambrose",
-      "change": "no_change",
-      "detail": "Direct site b7properties.com/ambrose confirmed 1BR $1,995/mo and 2BR $2,345/mo (no 2,195 or 2,630). Prices match April 18 confirmed data. $99 community fee unchanged."
-    }
+  "changed": [
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/groton-townhomes.html",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/meadow-ridge.html",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/the-ambrose.html",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/reid-hughes.html",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/hedgewood.html",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/groton-towers.html",
+    "/Users/stevenkuo/self-improving/apartment_prices.json",
+    "/Users/stevenkuo/apartment_update_groupB.json",
+    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/apartment_update_groupB.json"
   ],
-  "pages_updated": [
-    "groton-townhomes.html"
+  "news": [
+    "Groton Townhomes: April 21 direct-site recheck, 2 units still live at $1,875/$2,050 with 07/15 move-in dates.",
+    "Meadow Ridge: April 21 direct-site recheck, pricing still $1,130\u2013$1,190 for 1BR and $1,285\u2013$1,395 for 2BR.",
+    "The Ambrose: April 21 direct-site recheck, 1BR still $1,995 and 2BR still $2,345, $99 community fee unchanged.",
+    "Reid Hughes: April 21 direct-site recheck still shows Please Call for all plans, with no dollar pricing exposed.",
+    "Hedgewood: availability note corrected to about 6 units on aggregators, with pricing still $1,025/$1,325/$1,425.",
+    "Groton Towers: April 21 recheck, pricing and unit counts unchanged, 1 MONTH FREE Fairfield promo still active."
   ],
-  "errors": []
+  "errors": [],
+  "summary": "Group B refreshed. Direct-site rechecks confirmed no price changes at Groton Towers, Groton Townhomes, Meadow Ridge, and The Ambrose. Reid Hughes still shows Please Call on all plans. Hedgewood availability notes were corrected to reflect about 6 surfaced units on aggregators. La Triumphe price history was refreshed as no-significant-change with direct site still Cloudflare-blocked."
 }

@@ -1,23 +1,16 @@
 {
-  "changed": [
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/groton-townhomes.html",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/meadow-ridge.html",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/the-ambrose.html",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/reid-hughes.html",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/hedgewood.html",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/groton-towers.html",
-    "/Users/stevenkuo/self-improving/apartment_prices.json",
-    "/Users/stevenkuo/apartment_update_groupB.json",
-    "/Users/stevenkuo/Documents/apartment_search_groton_ct_site_2026-03-21/apartment_update_groupB.json"
+  "group": "B",
+  "properties_checked": [
+    "Groton Towers",
+    "Groton Townhomes",
+    "The Ambrose",
+    "Meadow Ridge",
+    "Reid Hughes",
+    "Hedgewood",
+    "La Triumphe"
   ],
-  "news": [
-    "Groton Townhomes: April 21 direct-site recheck, 2 units still live at $1,875/$2,050 with 07/15 move-in dates.",
-    "Meadow Ridge: April 21 direct-site recheck, pricing still $1,130\u2013$1,190 for 1BR and $1,285\u2013$1,395 for 2BR.",
-    "The Ambrose: April 21 direct-site recheck, 1BR still $1,995 and 2BR still $2,345, $99 community fee unchanged.",
-    "Reid Hughes: April 21 direct-site recheck still shows Please Call for all plans, with no dollar pricing exposed.",
-    "Hedgewood: availability note corrected to about 6 units on aggregators, with pricing still $1,025/$1,325/$1,425.",
-    "Groton Towers: April 21 recheck, pricing and unit counts unchanged, 1 MONTH FREE Fairfield promo still active."
-  ],
-  "errors": [],
-  "summary": "Group B refreshed. Direct-site rechecks confirmed no price changes at Groton Towers, Groton Townhomes, Meadow Ridge, and The Ambrose. Reid Hughes still shows Please Call on all plans. Hedgewood availability notes were corrected to reflect about 6 surfaced units on aggregators. La Triumphe price history was refreshed as no-significant-change with direct site still Cloudflare-blocked."
+  "changes_found": false,
+  "changes": [],
+  "news_items_added": [],
+  "summary": "Group B update complete April 22, 2026. Direct-site Playwright checks confirmed no price changes at Groton Towers (Studio $1,600–$1,775, 1BR Fairfield $1,895, 2BR Boston $2,058–$2,059, 2BR Providence $2,262–$2,322), Groton Townhomes (1BR $1,875, 2BR $2,050 — both with 07/15 availability), The Ambrose (1BR $1,995, 2BR $2,345, $99 community fee), Meadow Ridge (1BR $1,130–$1,190, 2BR $1,285–$1,395). Reid Hughes still shows Please Call on all plans. Hedgewood still aggregator-only with stable pricing ($1,025/1BR, $1,325/2BR, $1,425/3BR). La Triumphe still Cloudflare-blocked on direct site; aggregator pricing stable and 0 units available per Trulia. No page updates required. All prices written back to apartment_prices.json."
 }

@@ -16,7 +16,7 @@
 .figure-card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fbfcff}
 .figure-card img{max-width:100%;height:auto;display:block;background:#f3f6fb}
 .figure-title{font-weight:700;margin-bottom:10px}
-.figure-note{margin-top:8px;color:var(--muted);font-size:13px}.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}.feature-item::before{content:"\2713";color:var(--accent);font-weight:700;flex-shrink:0}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}
+.figure-note{margin-top:8px;color:var(--muted);font-size:13px}.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}.feature-item{display:flex;align-items:center;gap:10px;font-size:14px}.feature-item::before{content:"\2713";color:var(--accent);font-weight:700;flex-shrink:0}.price-up{color:#dc2626;font-size:13px;margin-left:4px}.price-down{color:#16a34a;font-size:13px;margin-left:4px}.price-new{font-size:11px;color:#fff;background:#2563eb;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle}
 h1{margin:0 0 8px;font-size:30px}h2{margin:0 0 14px;font-size:18px;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:8px}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 ul{padding-left:20px}li{margin-bottom:4px}
@@ -83,20 +83,8 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <p class="news-body">Per Tavily search (April 12): eaglepointeapts.com remains blocked by Cloudflare. Aggregator data (Apartments.com, Zillow, CorporateHousing): 1BR from $1,695/mo, 2BR $1,695–$1,955/mo (direct March 30 showed 2BR at $1,675 — floor ↑ $20), 3BR ~$1,935/mo. <strong>12 units available</strong> per CorporateHousing (April 12) — up from 11 units previously. Confirm directly at eaglepointeapts.com or (860) 442-3094.</p>
 </div>
 
-<div class="news-card">
-<h2>📰 Eagle Pointe: Prices stable, direct site still blocked — April 8, 2026</h2>
-<p class="news-date">April 8, 2026</p>
-<p class="news-body">Per Tavily/web search (April 8): eaglepointeapts.com remains blocked by Cloudflare — Playwright confirmed site times out on connection. Aggregators (Apartments.com, Zillow) still consistent with March 30 data: 1BR from $1,695/mo, 2BR $1,695–$1,915/mo, 3BR ~$1,935/mo. Zillow shows "starting at $1,085" (income-restricted outlier). No changes detected from April 7 check. Confirm directly at eaglepointeapts.com or (860) 442-2088.</p>
-</div>
-
-<div class="news-card" style="background:#fee2e2;border:1px solid #dc2626;">
-<h2>⚠️ Direct site blocked by Cloudflare — April 4, 2026</h2>
-<p class="news-date" style="color:#dc2626;">April 4, 2026</p>
-<p class="news-body" style="color:#7f1d1d;">eaglepointeapts.com/floorplans is now protected by Cloudflare and cannot be accessed via automated tools. Last confirmed direct data: March 30 prices (1BR $1,750, 2BR $1,675, 3BR $1,935). Current aggregator data (April 3): Apartments.com shows 1-3BR from $1,695–$1,955/mo; Zillow shows starting at $1,085/mo — suggesting possible price increases since March 30. Data below may be stale. Confirm current pricing directly with property.</p>
-</div>
 
 
-</div>
 
 
 <!-- PRICE TRENDS -->
@@ -224,10 +212,6 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <a class="btn" href="index.html">← Back to main page</a>
 </div>
 
-  });
-});
-
-// No data for 3BR
 <script>
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',

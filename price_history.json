@@ -26,7 +26,7 @@
       "note": "Stable at ~$1,935/mo per aggregators."
     },
     "last_updated": "2026-04-20",
-    "site_status": "Direct site accessible. Trulia shows OFF MARKET (April 19) \u2014 warning added to page. RentCafe, CorporateHousing (16 units), ApartmentFinder still show active listings.",
+    "site_status": "Direct site accessible. Trulia shows OFF MARKET (April 19) — warning added to page. RentCafe, CorporateHousing (16 units), ApartmentFinder still show active listings.",
     "note": "Prices: 1BR $1,695-$1,705/mo, 2BR $1,665-$1,895/mo, 3BR ~$1,935/mo. Special: Half Month FREE on select units. Trulia shows off-market warning; CorporateHousing still shows ~16 units.",
     "availability_note": "16 units available per CorporateHousing (April 19). ApartmentFinder shows 1BR available at $1,770/mo.",
     "special": "Half Month FREE on select units (April 18+)",
@@ -57,23 +57,23 @@
     "prev_2br_high": 2210
   },
   "groton-towers": {
-    "last_checked": "2026-04-24",
-    "check_status": "no_significant_change",
+    "last_checked": "2026-04-29",
+    "check_status": "changes_found",
     "_note": "Playwright April 24: site accessible, no price changes vs April 21. JS SecureCafe still blocks price extraction from availability portal.",
     "Studio (New Haven)": {
-      "price": 1600,
-      "date": "2026-04-18",
-      "range": "$1,600-$1,775",
+      "price": 1595,
+      "range": "$1,595-$1,770",
       "available": 6,
+      "date": "2026-04-29",
       "prev": 1600,
-      "note": "Availability increased to 6 units with pricing stable at $1,600-$1,775/mo per Playwright (April 16, 2026)."
+      "note": "Decreased $5 on low end to $1,595-$1,770/mo per Playwright (April 29, 2026)."
     },
     "1BR (Fairfield)": {
-      "price": 1895,
-      "range": "$1,895",
-      "available": 1,
-      "date": "2026-04-20",
-      "note": "Stable per Playwright April 20. 1 unit available."
+      "price": null,
+      "range": "Call for details",
+      "available": null,
+      "date": "2026-04-29",
+      "note": "Price now shows Call for details — no longer exposed on floor plans page per Playwright (April 29). Was $1,945/mo on April 25."
     },
     "1BR (Stonington)": {
       "price": null,
@@ -86,21 +86,23 @@
       "note": "Call for details per Playwright (April 15, 2026)."
     },
     "2BR (Providence)": {
-      "price": 2262,
-      "range": "$2,262-$2,322",
+      "price": 2218,
+      "range": "$2,218-$2,322",
       "available": 2,
-      "date": "2026-04-20",
-      "note": "Stable per Playwright April 20. 2 units available."
+      "date": "2026-04-29",
+      "prev": 2262,
+      "note": "Decreased $44 on low end to $2,218-$2,322/mo per Playwright (April 29, 2026)."
     },
     "2BR (Boston)": {
       "price": 2058,
-      "range": "$2,058-$2,059",
-      "available": 2,
-      "date": "2026-04-20",
-      "note": "Stable per Playwright April 20. 2 units available."
+      "range": "$2,058 (flat)",
+      "available": 1,
+      "date": "2026-04-29",
+      "prev": 2059,
+      "note": "Now flat $2,058/mo (down from $2,058-$2,059 range); availability decreased to 1 unit per Playwright (April 29, 2026)."
     },
-    "site_status": "ONLINE - confirmed accessible via Playwright (April 15). JS iframe with reCAPTCHA blocks price extraction.",
-    "last_updated": "2026-04-21",
+    "site_status": "ONLINE - confirmed via Playwright (April 29, 2026). Studio $1,595-$1,770 (6 avail), 1BR Fairfield now Call for details, 2BR Providence $2,218-$2,322 (2 avail), 2BR Boston $2,058 (1 avail). 1 MONTH FREE offer no longer visible.",
+    "last_updated": "2026-04-29",
     "special": "1 MONTH FREE on select Fairfield 1BRs (confirmed via SnapWidget, April 18)",
     "Studio": {
       "price": 1600,
@@ -120,7 +122,7 @@
     "check_status": "no_significant_change"
   },
   "groton-townhomes": {
-    "last_checked": "2026-04-24",
+    "last_checked": "2026-04-29",
     "check_status": "no_significant_change",
     "_note": "Prices unchanged from April 21 stored data. Task description baseline ($2,050/$2,195) was already stale before this run.",
     "1BR/1BA 750sqft": {
@@ -139,10 +141,10 @@
     },
     "availability_note": "2 units available per direct site (April 24, 2026) - both July 15 move-in",
     "last_updated": "2026-04-24",
-    "site_status": "DIRECT SITE: grotontownhouses.com/available-rentals confirmed accessible via Playwright (April 24). Prices: 1BR $1,875/mo, 2BR $2,050/mo. Both units July 15 move-in."
+    "site_status": "DIRECT SITE CONFIRMED: grotontownhouses.com/available-rentals (April 29, 2026). 1BR $1,875/mo, 2BR $2,050/mo. Both units still showing 07/15/2026 move-in date. 2 units available. No change from April 21."
   },
   "reid-hughes": {
-    "last_checked": "2026-04-23",
+    "last_checked": "2026-04-29",
     "check_status": "no_significant_change",
     "1BR": {
       "price": null,
@@ -156,12 +158,12 @@
       "note": "Pricing still unpublished on direct site (RealPage JS). Same as 1BR on April 18, 2026.",
       "status": "call_for_pricing_direct_aggregators_published"
     },
-    "last_updated": "2026-04-20",
-    "site_status": "direct site accessible but no pricing published \u2014 RealPage JS still showing Please Call (April 21)",
+    "last_updated": "2026-04-29",
+    "site_status": "Direct site still shows Please Call for all units (RealPage JS, April 29, 2026). No change.",
     "_rechecked": "2026-04-21 - Direct check confirmed Please Call still showing for all floor plans. Holiday offer banner still present. No dollar pricing exposed."
   },
   "hedgewood": {
-    "last_checked": "2026-04-23",
+    "last_checked": "2026-04-29",
     "check_status": "no_significant_change",
     "1BR": {
       "price": 1025,
@@ -183,12 +185,13 @@
       "source": "Trulia (April 18, 2026)",
       "note": "Stable at $1,425/mo per Trulia (April 18). No new data."
     },
-    "address": "70 Sandy Lane, Norwich CT (per Trulia/Zillow \u2014 different from 24 Sandy Lane on miradorliving.com)",
-    "site_status": "Aggregator-only \u2014 no dedicated property website. miradorliving.com is generic senior living advisor portal. Roughly 6 units available per Trulia/Zillow (latest tracked data).",
-    "last_updated": "2026-04-19"
+    "address": "70 Sandy Lane, Norwich CT (per Trulia/Zillow — different from 24 Sandy Lane on miradorliving.com)",
+    "site_status": "Aggregator-only — all major aggregators blocked by Cloudflare/CAPTCHA on April 29. Last confirmed: 1BR ~$1,025/mo, 2BR ~$1,325/mo, 3BR ~$1,425/mo per April 18 Trulia/Zillow.",
+    "last_updated": "2026-04-19",
+    "note": "Aggregators still blocked by Cloudflare/CAPTCHA on April 29. Last confirmed data: 1BR $1,025/mo, 2BR $1,325/mo, 3BR $1,425/mo per Trulia/Zillow (April 18-21). No change detected."
   },
   "the-ambrose": {
-    "last_checked": "2026-04-23",
+    "last_checked": "2026-04-29",
     "check_status": "no_significant_change",
     "1BR/1BA 724sqft": {
       "price": 1995,
@@ -202,14 +205,14 @@
       "source": "Direct site b7properties.com/ambrose (Playwright, April 20, 2026)",
       "note": "Stable at $2,345/mo per direct scrape (April 20). 2BR unchanged from April 16."
     },
-    "site_status": "DIRECT SITE CONFIRMED: b7properties.com/ambrose (Playwright, April 21). Prices: 1BR $1,995/mo, 2BR $2,345/mo. $99 community fee. No change from April 20.",
-    "last_updated": "2026-04-20",
+    "site_status": "DIRECT SITE CONFIRMED: b7properties.com/ambrose (April 29, 2026). 1BR $1,995/mo, 2BR $2,345/mo. No change from April 21.",
+    "last_updated": "2026-04-29",
     "changes": [
-      "April 18 direct site scrape: 1BR $1,995/mo, 2BR $2,345/mo \u2014 same as April 16 confirmed direct site. April 17 aggregator prices ($2,350/$2,630) appear stale/inflated."
+      "April 18 direct site scrape: 1BR $1,995/mo, 2BR $2,345/mo — same as April 16 confirmed direct site. April 17 aggregator prices ($2,350/$2,630) appear stale/inflated."
     ]
   },
   "la-triumphe": {
-    "last_checked": "2026-04-23",
+    "last_checked": "2026-04-29",
     "check_status": "blocked",
     "1BR (Phase I, 680sqft)": {
       "price": 1620,
@@ -245,18 +248,18 @@
       "range": "$2,010-$2,110",
       "note": "Stable at $2,010-$2,110/mo per April 7 RentCafe."
     },
-    "availability_note": "0 units available per Trulia (April 18) \u2014 ALL UNITS RENTED. Significant change from confirmed available units in prior runs. Direct site Cloudflare-blocked. Confirm directly at (860) 449-9999.",
+    "availability_note": "0 units available per Trulia (April 18) — ALL UNITS RENTED. Significant change from confirmed available units in prior runs. Direct site Cloudflare-blocked. Confirm directly at (860) 449-9999.",
     "special": {
       "offer": "$500 off 2BR first month",
       "expired": "2026-03-31",
       "status": "expired",
       "note": "Expired March 31, 2026. No new special as of April 18, 2026."
     },
-    "site_status": "direct site blocked by Cloudflare (April 21). Last confirmed pricing still aligns with April 13 eBrochure data. Availability remains 0 units per recent Trulia finding.",
-    "last_updated": "2026-04-19"
+    "site_status": "DIRECT SITE BLOCKED by Cloudflare (April 29, 2026) — same as April 21. Last confirmed pricing from April 13 eBrochure: 1BR Phase I $1,620, Phase II $1,750-$1,825; 2BR Phase I $1,670, Phase I Townhouse $1,850-$1,925, Phase II $2,010-$2,110, 3BR Townhouse $2,470. Availability still 0 units.",
+    "last_updated": "2026-04-29"
   },
   "meadow-ridge": {
-    "last_checked": "2026-04-23",
+    "last_checked": "2026-04-29",
     "check_status": "no_significant_change",
     "1BR/1BA 900sqft": {
       "price": 1130,
@@ -270,10 +273,10 @@
       "date": "2026-04-21",
       "note": "Stable at $1,285-$1,395/mo per Playwright (April 20)."
     },
-    "site_status": "ONLINE - meadowridgenorwich.com/floorplans confirmed accessible via Playwright (April 21). Prices unchanged.",
-    "_rechecked": "2026-04-18 - Live scrape confirms 1BR $1,130-$1,190/mo, 2BR $1,285-$1,395/mo \u2014 prices exactly match stored data. No price change detected.",
-    "last_updated": "2026-04-20",
-    "note": "Site floor plans page accessible via Playwright (April 18). Prices confirmed unchanged. Advisory says 'contact us' \u2014 confirm availability at (860) 889-2828."
+    "site_status": "ONLINE - meadowridgenorwich.com/floorplans confirmed accessible via Playwright (April 29). Prices unchanged: 1BR $1,130-$1,190/mo, 2BR $1,285-$1,395/mo. Both floor plans still show Apply Now.",
+    "_rechecked": "2026-04-18 - Live scrape confirms 1BR $1,130-$1,190/mo, 2BR $1,285-$1,395/mo — prices exactly match stored data. No price change detected.",
+    "last_updated": "2026-04-29",
+    "note": "Playwright (April 29) confirms site accessible and prices unchanged from April 21."
   },
   "pleasant-valley": {
     "1br": 2135,
@@ -337,14 +340,14 @@
       "date": "2026-04-09",
       "prev": 1325,
       "available": 1,
-      "note": "Per Rentable.co (April 9): 1BR Standard $1,295/mo \u2014 1 unit available (Unit 21). Price decreased from prior $1,325."
+      "note": "Per Rentable.co (April 9): 1BR Standard $1,295/mo — 1 unit available (Unit 21). Price decreased from prior $1,325."
     },
     "2BR/1BA": {
       "price": 1595,
       "date": "2026-04-09",
       "prev": 1595,
       "available": 1,
-      "note": "Per Rentable.co (April 9): 2BR $1,595/mo \u2014 1 unit available (Unit 60). Stable."
+      "note": "Per Rentable.co (April 9): 2BR $1,595/mo — 1 unit available (Unit 60). Stable."
     },
     "note": "Available now at $1,295-$1,595/mo per current task data. Baystate-managed property at 206 Washington St, Norwich.",
     "last_updated": "2026-04-21",
@@ -362,7 +365,7 @@
       "price": 1475,
       "date": "2026-03-28",
       "prev": 1495,
-      "note": "Decreased from $1,495 to $1,475/mo per Apartments.com/Rentable.co \u2014 2 units available"
+      "note": "Decreased from $1,495 to $1,475/mo per Apartments.com/Rentable.co — 2 units available"
     },
     "2BR/1BA": {
       "price": 1975,
@@ -481,8 +484,8 @@
     "2br_low": 2320,
     "2br_high": 2725,
     "last_updated": "2026-04-14",
-    "site_status": "Wix JS-heavy page still not extracting prices \u2014 Playwright loads page but only sees '$1' placeholder (likely from Wix iframe). No change detected. Prices last confirmed April 13: 1BR $1,855/mo, 2BR West Farm $2,650/mo, Harkness $2,350/mo, Oak Grove $2,320/mo, Great Neck $2,350/mo.",
-    "notes": "Site timeout/placeholder \u2014 no price change detected. 1BR stable at $1,855/mo. Contact (860) 772-2253 for current availability.",
+    "site_status": "Wix JS-heavy page still not extracting prices — Playwright loads page but only sees '$1' placeholder (likely from Wix iframe). No change detected. Prices last confirmed April 13: 1BR $1,855/mo, 2BR West Farm $2,650/mo, Harkness $2,350/mo, Oak Grove $2,320/mo, Great Neck $2,350/mo.",
+    "notes": "Site timeout/placeholder — no price change detected. 1BR stable at $1,855/mo. Contact (860) 772-2253 for current availability.",
     "last_checked": "2026-04-24",
     "check_status": "no_significant_change"
   },
@@ -490,7 +493,7 @@
     "Beacon 1BR Broad Reach": {
       "price": 2439,
       "date": "2026-04-01",
-      "note": "Decreased from $2,547 to $2,439-$2,494/mo per Zillow and CorporateHousing listings March 27 \u2014 $53-$108 decrease from March 26 peak. April 1: ApartmentList shows starting at $2,386/mo, broadly consistent. Playwright confirmed page loads but prices JS-rendered, no price extraction.",
+      "note": "Decreased from $2,547 to $2,439-$2,494/mo per Zillow and CorporateHousing listings March 27 — $53-$108 decrease from March 26 peak. April 1: ApartmentList shows starting at $2,386/mo, broadly consistent. Playwright confirmed page loads but prices JS-rendered, no price extraction.",
       "range": "$2,439-$2,494"
     },
     "Beacon 2BR Range": {
@@ -507,7 +510,7 @@
     "2br": 3500,
     "3br": 4200,
     "last_updated": "2026-04-15",
-    "site_status": "hmystic.com/enclave/floor-plans-enclave \u2014 page loads (title confirmed), PRICES JS-RENDERED (not extractable via Playwright). No price change detected vs April 14 stored. Prices from April 14: 1BR ~$2,400/mo, 2BR ~$3,500/mo, 3BR ~$4,200/mo.",
+    "site_status": "hmystic.com/enclave/floor-plans-enclave — page loads (title confirmed), PRICES JS-RENDERED (not extractable via Playwright). No price change detected vs April 14 stored. Prices from April 14: 1BR ~$2,400/mo, 2BR ~$3,500/mo, 3BR ~$4,200/mo.",
     "notes": "No change detected. Page loads with title 'Enclave at Harbor Heights - Floorplans' but prices are JS-rendered and not in page text. No prices found via Playwright. Same status as April 14. All Enclave floor plans show No Availability per previous checks.",
     "last_checked": "2026-04-24",
     "check_status": "no_significant_change"
@@ -520,7 +523,7 @@
     "last_updated": "2026-04-21",
     "source": "CorporateHousing + Zillow + ApartmentList (April 21, 2026)",
     "notes": "Availability increased from 15 to 22 units per CorporateHousing (April 21). Zillow shows 1BR starting $2,594/mo, 2BR Gypsea at $2,920/mo, newer 2BR at $3,067-$3,078/mo. 1 Month Free still active. Price ceiling $3,478/mo stable from April 17.",
-    "site_status": "hmystic.com/beacon/floor-plans-beacon \u2014 page loads, PRICES JS-RENDERED (not extractable via Playwright).",
+    "site_status": "hmystic.com/beacon/floor-plans-beacon — page loads, PRICES JS-RENDERED (not extractable via Playwright).",
     "last_checked": "2026-04-24",
     "check_status": "no_significant_change"
   }

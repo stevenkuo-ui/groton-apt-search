@@ -1,48 +1,41 @@
 import { chromium } from 'playwright';
 
+const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+
 const results = {};
 
-async function scrapeWithPlaywright(url, label) {
-  console.log(`\n=== Scraping: ${label} ===`);
-  const browser = await chromium.launch({ headless: true });
+async function scrape(url, label, waitOpts = { waitUntil: 'domcontentloaded', timeout: 30000 }) {
   const page = await browser.newPage();
+  page.setDefaultTimeout(30000);
   try {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    await page.waitForTimeout(5000);
+    await page.goto(url, waitOpts);
+    await page.waitForTimeout(8000);
+    const text = await page.evaluate(() => document.body.innerText);
     const title = await page.title();
-    const bodyText = await page.evaluate(() => document.body.innerText);
-    const html = await page.content();
-    console.log(`[${label}] Title: ${title}`);
-    console.log(`[${label}] Body text (first 3000 chars):\n${bodyText.substring(0, 3000)}`);
-    results[label] = { title, bodyText, html, url, success: true };
-  } catch (e) {
-    console.log(`[${label}] ERROR: ${e.message}`);
-    results[label] = { error: e.message, url, success: false };
+    results[label] = { success: true, title, text: text.slice(0, 5000) };
+  } catch(e) {
+    results[label] = { success: false, error: e.message.slice(0, 300) };
   }
-  await browser.close();
+  await page.close();
 }
 
-async function main() {
-  // Groton Towers - new site, JS-rendered portal
-  await scrapeWithPlaywright('https://grotonapartmenthomes.com/availability', 'Groton Towers');
+// Groton Towers - JS-rendered portal
+await scrape('https://grotonapartmenthomes.com/floorplans', 'groton-towers', { waitUntil: 'networkidle', timeout: 30000 });
 
-  // Groton Townhomes - direct available-rentals URL
-  await scrapeWithPlaywright('https://grotontownhouses.com/available-rentals', 'Groton Townhomes');
+// Groton Townhomes - JS-rendered
+await scrape('https://grotontownhouses.com/available-rentals', 'groton-townhomes', { waitUntil: 'networkidle', timeout: 30000 });
 
-  // Reid Hughes - RealPage JS
-  await scrapeWithPlaywright('https://reidhughes.com/floor-plans', 'Reid Hughes');
+// Reid Hughes - RealPage JS
+await scrape('https://www.reidhughes.com/Floor-Plans.aspx', 'reid-hughes', { waitUntil: 'networkidle', timeout: 30000 });
 
-  // Meadow Ridge
-  await scrapeWithPlaywright('https://meadowridgenorwich.com/floor-plans', 'Meadow Ridge');
+// The Ambrose - direct site
+await scrape('https://www.b7properties.com/ambrose', 'the-ambrose', { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-  // Hedgewood - miradorliving.com (generic portal)
-  await scrapeWithPlaywright('https://miradorliving.com', 'Hedgewood');
+// Meadow Ridge - JS-rendered RentCafe
+await scrape('https://www.meadowridgenorwich.com/floorplans', 'meadow-ridge', { waitUntil: 'networkidle', timeout: 30000 });
 
-  // The Ambrose
-  await scrapeWithPlaywright('https://b7properties.com/ambrose', 'The Ambrose');
+// Hedgewood - direct site
+await scrape('https://www.miradorliving.com/communities/hedgewood', 'hedgewood', { waitUntil: 'domcontentloaded', timeout: 30000 });
 
-  console.log('\n=== ALL RESULTS ===');
-  console.log(JSON.stringify(results, null, 2));
-}
-
-main().catch(console.error);
+await browser.close();
+console.log(JSON.stringify(results, null, 2));

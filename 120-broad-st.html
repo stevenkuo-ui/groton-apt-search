@@ -51,6 +51,12 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- NEWS -->
 <div class="news-card" style="background:#fee2e2;border:1px solid #dc2626;">
+<h2 style="color:#7f1d1d">📈 1BR/2BR prices increased — May 3, 2026</h2>
+<p class="news-date" style="color:#dc2626;">May 3, 2026</p>
+<p class="news-body" style="color:#7f1d1d;">Per Trulia + Redfin (May 3): 120 Broad St / One20Broad now shows 1BR from <strong>$2,200/mo</strong> (up from stored $1,850) and 2BR from <strong>$2,500/mo</strong> (up from $2,200). Studio remains at $1,400/mo. Redfin shows Unit 206 (2BR/2BA, 796sqft) at $2,350/mo. Confirm current pricing with MB Financial at (860) 743-1375.</p>
+</div>
+
+<div class="news-card" style="background:#fee2e2;border:1px solid #dc2626;">
 <h2 style="color:#7f1d1d">⚠️ HotPads removed listing, Trulia still shows 6 units — April 21, 2026</h2>
 <p class="news-date" style="color:#dc2626;">April 21, 2026</p>
 <p class="news-body" style="color:#7f1d1d;">Current task data says <strong>HotPads removed 120 Broad St on 3/21/26</strong>, but <strong>Trulia still shows 6 units available</strong>. Keep this property on the site, but do not treat the unit count as fully settled until MB Financial confirms current inventory.</p>
@@ -115,7 +121,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="card" id="price-trends">
 <div class="trends-header">
 <h2>&#128200; Price Trends</h2>
-<span class="trends-meta">Last updated Apr 9, 2026 &middot; Comparing Mar–Apr 2026 vs Feb 2026 — Updated Apr 9</span>
+<span class="trends-meta">Last updated May 3, 2026 &middot; Comparing May 2026 vs Apr 2026 — Updated May 3</span>
 </div>
 
 <div class="chart-wrap" id="price-chart-wrap">
@@ -136,23 +142,23 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tbody>
 <tr>
 <td>Studio</td>
-<td>$1,500/mo</td>
-<td class="pt-current">$1,500/mo <span style="color:#dc2626;font-size:12px;margin-left:4px">●</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$100</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
+<td>$1,400/mo</td>
+<td class="pt-current">$1,400/mo <span style="color:#7c3aed;font-size:12px;margin-left:4px">●</span></td>
+<td>—</td>
+<td><span style="color:#2563eb">&#8594; Stable</span></td>
 </tr>
 <tr>
 <td>1BR</td>
-<td>$1,650/mo</td>
-<td class="pt-current">$1,850–$2,200/mo <span style="color:#dc2626;font-size:12px;margin-left:4px">●</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$200–$550</span></td>
+<td>$1,850/mo</td>
+<td class="pt-current">$2,200/mo <span class="price-up">↑</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$350</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>2BR</td>
 <td>$2,200/mo</td>
-<td class="pt-current">$2,200/mo <span class="price-up">↑</span></td>
-<td><span style="color:#dc2626;font-weight:700">&#8593; +$350</span></td>
+<td class="pt-current">$2,500/mo <span class="price-up">↑</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$300</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 </tbody>
@@ -164,7 +170,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- DETAILS -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing:</strong> Per HotPads (April 9, 2026): Studio from $1,400/mo, 1BR from $1,850+, 2BR from $2,200+ (↑ from $1,850/mo prior). Per Redfin/Apartments.com current listings: 2BR ranges $1,800–$2,900/mo depending on unit. Overall range: Studio $1,400, 1BR $1,850, 2BR $1,800–$2,900/mo. Confirm current pricing with MB Financial at (203) 871-3188.</p>
+<p><strong>Pricing &amp; Availability:</strong> Per Trulia (May 3, 2026): 120 Broad St / One20Broad shows Studio <strong>$1,400/mo</strong>, 1BR from <strong>$2,200/mo</strong>, 2BR from <strong>$2,500/mo</strong> — up significantly from stored data. Redfin shows 2BR/2BA unit at $2,350/mo (Unit 206, 796sqft). ApartmentHomeLiving also shows 2BR/2BA at $2,350/mo. Confirm current pricing with MB Financial at (860) 743-1375.</p>
 <p><strong>Availability:</strong> ⚠️ <strong>Warning flag active</strong> — HotPads removed the listing, but Trulia still shows <strong>6 units available</strong>. Verify current status directly with MB Financial at (860) 743-1375 before visiting.</p>
 <p><strong>Floor plans:</strong></p>
 <ul>
@@ -224,11 +230,11 @@ ul{padding-left:20px}li{margin-bottom:4px}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026'],
     datasets: [
       {
             "label": "Studio",
-            "data": [1425, 1500, 1400],
+            "data": [1425, 1500, 1400, 1400, 1400],
             "borderColor": "#7c3aed",
             "backgroundColor": "rgba(124,58,237,0.08)",
             "fill": true,
@@ -239,7 +245,7 @@ new Chart(document.getElementById('price-trend-chart'), {
       },
       {
             "label": "1BR",
-            "data": [1800, 1650, 1850],
+            "data": [1800, 1650, 1850, 1850, 2200],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",
             "fill": true,
@@ -250,7 +256,7 @@ new Chart(document.getElementById('price-trend-chart'), {
       },
       {
             "label": "2BR",
-            "data": [2350, 2200, 1850],
+            "data": [2350, 2200, 1850, 2200, 2500],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",
             "fill": true,

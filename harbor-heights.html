@@ -58,9 +58,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- NEWS -->
 <div class="news-card">
-<h2>📢 Harbor Heights availability increased to 22 units — April 21, 2026</h2>
-<p class="news-date">April 21, 2026</p>
-<p class="news-body">22 units available per CorporateHousing (April 21, 2026) — up from 15 units per ApartmentList. Zillow shows 1BR starting at $2,594/mo, 2BR Gypsea at $2,920/mo, newer 2BR units at $3,067–$3,078/mo. 1 Month Free still active on select units. Confirm availability with leasing at (860) 764-2667.</p>
+<h2>⚠️ Harbor Heights availability DROPPED to 8 units per ApartmentList — May 5, 2026</h2>
+<p class="news-date">May 5, 2026</p>
+<p class="news-body">ApartmentList (May 5) shows only 8 units available (down from 22 per CorporateHousing April 21). Price range now $2,518–$3,563/mo (ceiling up from $3,478). 1BR: Carpe Diem (653sqft) $2,518/mo (3 units), The Cape (742sqft) $2,579/mo (2 units), Watch Hill (869sqft) $2,934/mo (1 unit). 2BR: not listed in scrape — confirm at (860) 530-5246.</p>
 </div>
 
 <div class="news-card">
@@ -134,17 +134,17 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tbody>
 <tr>
 <td>1BR</td>
-<td>$2,439–$2,494/mo</td>
-<td class="pt-current">$2,395–$2,494/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
-<td><span style="color:#2563eb;font-weight:700">&#8594; Range shift</span></td>
-<td><span style="color:#2563eb">&#8594; Stable</span></td>
+<td>$2,395–$2,494/mo</td>
+<td class="pt-current">$2,518–$3,563/mo <span class="pt-up">↑ +$65 range</span></td>
+<td><span style="color:#2563eb;font-weight:700">&#8593; Mixed</span></td>
+<td><span style="color:#2563eb;font-weight:700">&#8593; Mixed</span></td>
 </tr>
 <tr>
 <td>2BR</td>
 <td>$3,295/mo</td>
-<td class="pt-current">$3,035–$3,744/mo <span class="pt-up">↑ range expanded</span></td>
-<td><span style="color:#2563eb;font-weight:700">&#8594; Mixed</span></td>
-<td><span style="color:#2563eb;font-weight:700">&#8594; Mixed</span></td>
+<td class="pt-current">$3,035–$3,744/mo <span class="pt-up">↑ +$449 ceiling</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; +$449 ceiling</span></td>
+<td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
 <tr>
 <td>3BR</td>
@@ -182,7 +182,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="figure-card">
 <div class="figure-title">Carpe Diem — 723 sq ft · 1BR / 1BA</div>
 <img src="https://cdn.prod.website-files.com/6601a2f3d14aa4d5d52837b9/679d465b0963e4d23198fc16_Carpe%20Diem.jpg" alt="Carpe Diem floor plan at Beacon">
-<div class="figure-note">Beacon collection · 1BR/1BA, 723 sq ft · <strong>$2,544–$2,614/mo</strong> <span class="price-down">↓</span></div>
+<div class="figure-note">Beacon collection · 1BR/1BA, 723 sq ft · <strong>$2,518/mo</strong> <span class="price-up">↑</span></div>
 </div>
 <div class="figure-card">
 <div class="figure-title">Dolce Vita — 813 sq ft · 1BR / 1BA / Den</div>
@@ -197,12 +197,12 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="figure-card">
 <div class="figure-title">Gypsea — 1,025 sq ft · 2BR / 2BA</div>
 <img src="https://cdn.prod.website-files.com/6601a2f3d14aa4d5d52837b9/679d493e0840ef2d93fac75e_Gypsea%20Two%20Bedroom.jpg" alt="Gypsea floor plan at Beacon">
-<div class="figure-note">Beacon collection · 2BR/2BA, 1,025 sq ft · <strong>$3,035/mo</strong> <span class="price-up">↑</span></div>
+<div class="figure-note">Beacon collection · 2BR/2BA, 1,025 sq ft · <strong>$3,035/mo</strong> <span class="price-down">↓</span></div>
 </div>
 <div class="figure-card">
 <div class="figure-title">Odyssey — 1,191 sq ft · 2BR / 2BA</div>
 <img src="https://cdn.prod.website-files.com/6601a2f3d14aa4d5d52837b9/679d465b0963e4d23198fc16_Odyssey.jpg" alt="Odyssey floor plan at Beacon">
-<div class="figure-note">Beacon collection · 2BR/2BA, 1,191 sq ft · <strong>$3,258/mo</strong> <span class="price-up">↑</span></div>
+<div class="figure-note">Beacon collection · 2BR/2BA, 1,191 sq ft · <strong>$3,258/mo</strong> <span class="price-down">↓</span></div>
 </div>
 <div class="figure-card">
 <div class="figure-title">Reel Escape — 1,282 sq ft · 2BR / 2BA / Den</div>
@@ -350,7 +350,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026'],
     datasets: [
       {
             "label": "1BR",
@@ -358,7 +358,8 @@ new Chart(document.getElementById('price-trend-chart'), {
                   2350,
                   2380,
                   2450,
-                  2440
+                  2440,
+                  2518
             ],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",
@@ -374,7 +375,8 @@ new Chart(document.getElementById('price-trend-chart'), {
                   3150,
                   3220,
                   3295,
-                  3250
+                  3250,
+                  3390
             ],
             "borderColor": "#0891b2",
             "backgroundColor": "rgba(8,145,178,0.08)",
@@ -389,6 +391,7 @@ new Chart(document.getElementById('price-trend-chart'), {
             "data": [
                   3895,
                   3950,
+                  3995,
                   3995,
                   3995
             ],

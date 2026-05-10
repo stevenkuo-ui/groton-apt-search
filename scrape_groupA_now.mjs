@@ -1,48 +1,172 @@
-import { chromium } from 'playwright';
+#!/usr/bin/env node
+const { chromium } = require('playwright');
 
-const props = [
-  { name: 'triton-square', url: 'https://www.tritonsquare.com/availability-map/', label: 'Triton Square' },
-  { name: 'pleasant-valley', url: 'https://www.pleasantvalley-apts.com/apartments/ct/groton/floor-plans', label: 'Pleasant Valley' },
-  { name: 'harbor-heights-beacon', url: 'https://www.hmystic.com/beacon/floor-plans-beacon', label: 'Harbor Heights Beacon' },
-  { name: 'harbor-heights-enclave', url: 'https://www.hmystic.com/enclave/floor-plans-enclave', label: 'Harbor Heights Enclave' },
-  { name: 'waterford-woods', url: 'https://www.waterfordwoods.com/availability', label: 'Waterford Woods' },
-  { name: 'groton-estates', url: 'https://grotonestates.com/floor-plans/', label: 'Groton Estates' },
-  { name: 'chester-place', url: 'https://www.b7properties.com/chester-place', label: 'Chester Place' },
-  { name: 'emerson-place', url: 'https://www.b7properties.com/emerson', label: 'Emerson Place' },
-  { name: 'the-ledges', url: 'https://www.theledgesapartments.com/floorplans', label: 'The Ledges' },
-  { name: 'gull-harbor', url: 'https://gullharborct.com/floorplans', label: 'Gull Harbor' },
+const PROPERTIES = [
+  {
+    name: 'triton-square',
+    url: 'https://www.tritonsquare.com/availability-map/',
+    fallbackUrls: [
+      'https://www.zillow.com/homes/recently_rented/Groton-CT_rb/',
+      'https://hotpads.com/groton-ct/apartments-for-rent/'
+    ]
+  },
+  {
+    name: 'pleasant-valley',
+    url: 'https://www.pleasantvalley-apts.com/apartments/ct/groton/floor-plans'
+  },
+  {
+    name: 'harbor-heights-enclave',
+    url: 'https://www.hmystic.com/enclave/floor-plans-enclave'
+  },
+  {
+    name: 'harbor-heights-beacon',
+    url: 'https://www.hmystic.com/beacon/floor-plans-beacon'
+  },
+  {
+    name: 'waterford-woods',
+    url: 'https://www.waterfordwoods.com/availability'
+  },
+  {
+    name: 'groton-estates',
+    url: 'https://grotonestates.com/floor-plans/'
+  },
+  {
+    name: 'chester-place',
+    url: 'https://www.b7properties.com/chester-place'
+  },
+  {
+    name: 'emerson-place',
+    url: 'https://www.b7properties.com/emerson'
+  },
+  {
+    name: 'the-ledges',
+    url: 'https://www.theledgesapartments.com/floorplans'
+  },
+  {
+    name: 'gull-harbor',
+    url: 'https://gullharborct.com/floorplans'
+  }
 ];
 
-const browser = await chromium.launch({ headless: true });
-const results = {};
+async function scrapeProperty(browser, prop) {
+  const result = {
+    name: prop.name,
+    url: prop.url,
+    status: 'unknown',
+    error: null,
+    units: []
+  };
 
-for (const p of props) {
-  const page = await browser.newPage();
+  let page;
   try {
-    await page.goto(p.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    page = await browser.newPage();
+    page.setDefaultTimeout(20000);
+    
+    const response = await page.goto(prop.url, {
+      waitUntil: 'domcontentloaded',
+      timeout: 25000
+    }).catch(async err => {
+      // Try with networkidle fallback
+      return await page.goto(prop.url, {
+        waitUntil: 'networkidle',
+        timeout: 30000
+      }).catch(() => null);
+    });
+
+    if (!response || response.status() >= 400) {
+      result.status = 'http_error';
+      result.httpStatus = response ? response.status() : 'no_response';
+      await page.close();
+      return result;
+    }
+
+    // Wait for any dynamic content
     await page.waitForTimeout(5000);
-    const title = await page.title();
-    const bodyText = await page.evaluate(() => document.body?.innerText?.slice(0, 3000) ?? '');
-    // Try to extract prices
-    const priceRegex = /\$[\d,]+/g;
-    const prices = (bodyText.match(priceRegex) ?? []).slice(0, 30);
-    // Check for availability
-    const availRegex = /(\d+)\s*(units?\s*avail|availab(?:le|ility))/i;
-    const availMatch = bodyText.match(availRegex);
-    results[p.name] = {
-      status: 'ok',
-      title,
-      url: p.url,
-      rawText: bodyText.slice(0, 2000),
-      prices: prices.filter(p => p.length > 3),
-      availability: availMatch ? availMatch[0] : null,
-    };
-  } catch (e) {
-    results[p.name] = { status: 'error', error: e.message.slice(0, 200), url: p.url };
+
+    // Extract text content
+    const bodyText = await page.evaluate(() => document.body.innerText);
+    
+    // Try to extract pricing data
+    const pricingData = await page.evaluate(() => {
+      const results = [];
+      
+      // Look for floor plan blocks
+      const allText = document.body.innerText;
+      const priceRegex = /\$[\d,]+/g;
+      const prices = allText.match(priceRegex) || [];
+      
+      // Get all headings and their associated text
+      const headings = [];
+      document.querySelectorAll('h1,h2,h3,h4').forEach(h => {
+        const text = h.innerText.trim();
+        if (text) headings.push(text);
+      });
+      
+      // Get table data if present
+      const tables = [];
+      document.querySelectorAll('table').forEach(t => {
+        const rows = [];
+        t.querySelectorAll('tr').forEach(r => {
+          const cells = [];
+          r.querySelectorAll('td,th').forEach(c => cells.push(c.innerText.trim()));
+          rows.push(cells.join(' | '));
+        });
+        if (rows.length > 0) tables.push(rows.join('\n'));
+      });
+      
+      return {
+        prices: [...new Set(prices)].slice(0, 50),
+        headings,
+        tables,
+        rawLength: allText.length
+      };
+    });
+
+    result.status = 'success';
+    result.httpStatus = response.status();
+    result.bodyText = bodyText.substring(0, 8000);
+    result.pricingData = pricingData;
+    
+  } catch (err) {
+    result.status = 'error';
+    result.error = err.message;
   } finally {
-    await page.close();
+    if (page) await page.close();
   }
+
+  return result;
 }
 
-await browser.close();
-console.log(JSON.stringify(results, null, 2));
+async function main() {
+  console.error('Starting Group A scrape...');
+  
+  const browser = await chromium.launch({ headless: true });
+  const results = {};
+  
+  for (const prop of PROPERTIES) {
+    console.error(`Scraping: ${prop.name}...`);
+    try {
+      const r = await scrapeProperty(browser, prop);
+      results[prop.name] = r;
+      
+      // Delay between requests
+      await new Promise(r => setTimeout(r, 2000));
+    } catch (err) {
+      results[prop.name] = {
+        name: prop.name,
+        status: 'crash',
+        error: err.message
+      };
+    }
+  }
+  
+  await browser.close();
+  
+  // Output as JSON
+  console.log(JSON.stringify(results, null, 2));
+}
+
+main().catch(err => {
+  console.error('Fatal:', err);
+  process.exit(1);
+});

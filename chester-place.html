@@ -62,9 +62,9 @@ ul{padding-left:20px}li{margin-bottom:4px}
 
 <!-- NEWS -->
 <div class="news-card">
-<h2>✅ Chester Place prices confirmed stable at $1,925/mo — May 10, 2026</h2>
+<h2>✅ Chester Place prices CONFIRMED stable at $1,925/mo — May 10, 2026</h2>
 <p class="news-date">May 10, 2026</p>
-<p class="news-body">b7properties.com/chester-place confirmed (May 10, 2026): 1BR still $1,925/mo. No change from May 8. $99/mo community fee unchanged. Direct site accessible via Playwright. Confirm at (401) 396-9777.</p>
+<p class="news-body">Direct Playwright scrape of b7properties.com/chester-place (May 10, 2026) confirms: 1BR/1BA 608sqft still $1,925/mo. No change from May 8. $99/mo community fee covers WiFi, water, sewer, trash, renters insurance, resident rewards, credit building. No up-front security deposit required. Contact Martha (Property Manager) at (860) 400-2050 or b7 at (401) 396-9777.</p>
 </div>
 
 <div class="news-card">
@@ -91,7 +91,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <div class="card" id="price-trends">
 <div class="trends-header">
 <h2>&#128200; Price Trends</h2>
-<span class="trends-meta">Last updated Apr 1, 2026 &middot; 1BR only — Chester Place has no Studio or 2BR units</span>
+<span class="trends-meta">Last updated May 10, 2026 &middot; 1BR only — Chester Place has no Studio or 2BR units</span>
 </div>
 
 <div class="chart-wrap" id="price-chart-wrap">
@@ -104,7 +104,8 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <th>Room Type</th>
 <th>Feb 2026</th>
-<th>Mar 2026 (Current)</th>
+<th>Apr 2026</th>
+<th>May 2026 (Current)</th>
 <th>Change</th>
 <th>Trend</th>
 </tr>
@@ -113,7 +114,7 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <tr>
 <td>1BR</td>
 <td>$1,820/mo</td>
-<td class="pt-current">$1,845/mo <span style="color:#2563eb;font-size:12px;margin-left:4px">●</span></td>
+<td class="pt-current">$1,845/mo <span class="pt-up">↑</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; +$25</span></td>
 <td><span style="color:#dc2626;font-weight:700">&#8593; Increasing</span></td>
 </tr>
@@ -133,16 +134,12 @@ ul{padding-left:20px}li{margin-bottom:4px}
 <!-- DETAILS -->
 <div class="card">
 <h2>Details</h2>
-<p><strong>Pricing:</strong> <strong>$1,925/mo</strong> for 1BR/1BA 600sqft (confirmed via b7properties.com live scrape, April 15, 2026).</p>
-<p><strong>Availability (via AppFolio):</strong></p>
+<p><strong>Pricing (confirmed via b7properties.com/chester-place, May 10, 2026):</strong> <strong>$1,925/mo</strong> for 1BR/1BA 608sqft. $99/mo community fee covers WiFi, water, sewer, trash, renters insurance, resident rewards program, and credit building. No up-front security deposit required. First month's rent due at signing. Pet fees: $250 registration + $40/mo dog / $30/mo cat. Direct site confirms no active specials at this time.</p>
+<p><strong>Availability (via b7properties.com, May 10, 2026):</strong></p>
 <div class="figure-grid">
 <div class="figure-card">
-<div class="figure-title">1BR/1BA — 600 sqft (Unit D4)</div>
+<div class="figure-title">1BR/1BA — 608 sqft</div>
 <div class="figure-note">$1,925/mo <span class="price-up">↑</span> · <strong>Available NOW</strong></div>
-</div>
-<div class="figure-card">
-<div class="figure-title">1BR/1BA — 600 sqft (Unit F1)</div>
-<div class="figure-note">$1,925/mo <span class="price-up">↑</span> · Available 4/10/26 <em>(may be leased — confirm)</em></div>
 </div>
 </div>
 </div>
@@ -211,14 +208,16 @@ ul{padding-left:20px}li{margin-bottom:4px}
 new Chart(document.getElementById('price-trend-chart'), {
   type: 'line',
   data: {
-    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026'],
+    labels: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026'],
     datasets: [
       {
             "label": "1BR",
             "data": [
                   1820,
                   1820,
-                  1845
+                  1820,
+                  1845,
+                  1925
             ],
             "borderColor": "#2563eb",
             "backgroundColor": "rgba(37,99,235,0.08)",

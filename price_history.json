@@ -4,7 +4,7 @@
     "prev_1br": 1925,
     "last_updated": "2026-05-03",
     "notes": "May 3: b7properties.com/chester-place confirmed 1BR $1,925/mo. $500 OFF first month active. No change. Direct site accessible.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change",
     "site_status": "LIVE - confirmed via Playwright (May 3, 2026)"
   },
@@ -42,7 +42,7 @@
     "2br": 2445,
     "last_updated": "2026-05-03",
     "notes": "May 3: b7properties.com/emerson confirmed 1BR $1,975, Corner $1,995, 2BR $2,445. No change from April 16. Direct site accessible.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change",
     "site_status": "LIVE - confirmed via Playwright (May 3, 2026)"
   },
@@ -54,7 +54,7 @@
     "availability": "12 units",
     "source": "grotonestates.com/floor-plans Playwright (April 14, 2026)",
     "notes": "May 3: grotonestates.com/floor-plans Playwright confirms 2BR $1,775-$2,065/mo (same as stored). Scrape JSON showed 10 units available vs HTML's 12 - likely stale JS widget. Direct site accessible. No price change.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change",
     "prev_2br_high": 2210,
     "site_status": "LIVE - confirmed via Playwright (May 3, 2026)",
@@ -120,9 +120,9 @@
     "1br": 1695,
     "prev_1br": 1675,
     "last_updated": "2026-05-03",
-    "site_status": "gullharborct.com/floorplans still HTTP 404 (May 3, 2026 - 12+ days). Homepage may be accessible. Prices via Zillow May 2: $1,550-$1,695/mo.",
+    "site_status": "gullharborct.com/floorplans HTTP 404 (May 12, 2026 - Day 24)",
     "notes": "gullharborct.com returning HTTP 403 (Cloudflare) for homepage and HTTP 404 for /floorplans as of April 17. Previous HTTP 405 (April 15) has escalated to full block. Last confirmed price: $1,675/mo per April 13 Playwright. Verify availability directly at (860) 437-6952.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "site_404"
   },
   "groton-townhomes": {
@@ -283,13 +283,13 @@
     "note": "Playwright (April 29) confirms site accessible and prices unchanged from April 21."
   },
   "pleasant-valley": {
-    "1br": 2135,
-    "studio": 1920,
-    "2br": 2585,
+    "1br": 2085,
+    "studio": 1870,
+    "2br": 2535,
     "last_updated": "2026-05-03",
     "source": "Direct site Playwright scrape (April 17, 2026). G5 platform working. Prices stable. 2BR availability now confirmed: 1 unit available (was: contact for availability).",
     "notes": "May 3: Playwright confirmed: Studio $1,920, 1BR $2,135, 2BR $2,585. No change from May 1. Availability: Studio 3, 1BR 4, 2BR 1 unit.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change",
     "2br_prev": 2585,
     "availability": {
@@ -312,7 +312,7 @@
     "last_updated": "2026-05-03",
     "site_status": "CLOUDFLARE blocked (May 3, 2026). No price extraction. Prices stale from April 27: 1BR $2,096/mo, 2BR $2,594/mo, 3BR $3,916/mo per ApartmentList.",
     "notes": "April 21 update: Studio dropped to $1,519/mo (down $269 from $1,788 on April 18). 1BR Simply Modern at $2,241/mo (stable). 2BR floor plan from $2,550/mo per ApartmentHomeLiving (up from $2,157 stored). 17 units available (up from 15).",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "cloudflare_blocked"
   },
   "triton-square": {
@@ -321,9 +321,9 @@
     "1br": 2585,
     "2br": 3175,
     "last_updated": "2026-05-03",
-    "site_status": "JS iframe on availability-map still blocking (May 3, 2026). Homepage confirmed \"1 Month Free Rent on 13-month lease on all 1BR\" ongoing. Prices per April 20 aggregators still apply.",
+    "site_status": "Cloudflare blocked (May 12, 2026)",
     "notes": "May 3: JS iframe still blocking. Homepage confirms 1BR special ongoing (1 Month Free on 1BR, Reduced Rent on 2BR). No new price data. Last confirmed: Studio $2,335-$2,395, 1BR A7/A8 $2,585, 2BR B1 $3,034, B3 $3,085 (April 20).",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "js_blocked"
   },
   "reNew-groton": {
@@ -497,7 +497,7 @@
     "last_updated": "2026-05-03",
     "site_status": "WIX JS - no price extraction (May 3, 2026). Homepage accessible but availability/pricing in JS widgets. No change.",
     "notes": "Site timeout/placeholder \u2014 no price change detected. 1BR stable at $1,855/mo. Contact (860) 772-2253 for current availability.",
-    "last_checked": "2026-05-03",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change_js_blocked"
   },
   "harbor-heights": {
@@ -513,7 +513,7 @@
       "note": "Gypsea (1,025sqft) at $2,920/mo per Zillow March 27. Odyssey at $3,200+, Reel Escape at $3,670, The Pearl at $3,750+. Previous $3,056 estimate was high. April 1: ApartmentList shows $2,386-$3,742 range, broadly consistent. Playwright confirms page loads but prices JS-rendered.",
       "range": "$2,920-$3,750+"
     },
-    "last_checked": "2026-04-22",
+    "last_checked": "2026-05-12",
     "check_status": "no_significant_change"
   },
   "harbor-heights-enclave": {
